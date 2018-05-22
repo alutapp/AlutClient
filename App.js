@@ -12,27 +12,25 @@ import {
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import MyHeader from './components/MyHeader.js'
+import BadgeTabIcon from './components/BadgeTabIcon.js'
+import Test from './Test';
+import {Icon} from 'react-native-elements'
+import { createBottomTabNavigator } from 'react-navigation';
+
 
 type Props = {};
-export default class App extends Component<Props> {
+export class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
+    <MyHeader />
+}
+      />
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          ברוכים הבאים לאפליקציית אלו״ט
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+
       </View>
     );
   }
@@ -40,10 +38,7 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flexDirection: 'row'
   },
   welcome: {
     fontSize: 20,
@@ -56,3 +51,33 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export default createBottomTabNavigator({
+  הצעות: App,
+מועדפים: Test,
+  הגדרות: Test
+},
+{
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'הצעות') {
+          iconName = 'people';
+        } else if (routeName === 'הגדרות') {
+          iconName = 'settings';
+        }
+        else if (routeName === 'מועדפים') {
+          iconName = 'star';
+        }
+
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        return <BadgeTabIcon iconName={iconName} size={25} tintColor={tintColor} notificationCount={5}/>;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: '#3D6DCC',
+      inactiveTintColor: 'gray',
+    },
+  });
