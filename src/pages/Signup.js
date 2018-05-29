@@ -21,7 +21,7 @@ export default class Signup extends Component<{}> {
 	render() {
 		return(
 			<View style={styles.container}>
-				<Logo/>
+				<Logo text="Welcome to Alut app"/>
 				<Form type="Signup"/>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Already have an account?</Text>

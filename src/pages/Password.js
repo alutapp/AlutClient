@@ -23,11 +23,14 @@ export default class Login extends Component<{}> {
         Actions.password()
     }
 
+    goBack() {
+        Actions.pop()
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <Logo />
-                <Text style={styles.title}>Forget your password?</Text>
+                <Logo text="Forgot your password?"/>
                 <Text style={styles.signupText}>Don't worry. Resetting your password is easy, just tell us the email address you registered with.</Text>
                 <TextInput style={styles.inputBox}
                     underlineColorAndroid='rgba(0,0,0,0)'
@@ -40,6 +43,10 @@ export default class Login extends Component<{}> {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>Send</Text>
                 </TouchableOpacity>
+                <View style={styles.signupTextCont}>
+					<Text style={styles.signupText}>Remember your password?</Text>
+					<TouchableOpacity onPress={this.goBack}><Text style={styles.signupButton}> Go back</Text></TouchableOpacity>
+				</View>
             </View>
         )
     }
@@ -51,10 +58,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    title: {
-        color: 'rgba(255,255,255,0.6)',
-        fontSize: 20,
     },
     signupTextCont: {
         flexGrow: 1,
