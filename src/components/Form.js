@@ -7,7 +7,7 @@ import {
   TouchableOpacity 
 } from 'react-native';
 
-export default class Logo extends Component<{}> {
+export default class Form extends Component {
 
 	render(){
 		return(
@@ -28,7 +28,7 @@ export default class Logo extends Component<{}> {
               ref={(input) => this.password = input}
               />  
            <TouchableOpacity style={styles.button}>
-             <Text style={styles.buttonText}>{this.props.type}</Text>
+             <Text style={styles.buttonText}>{this.props.clickName}</Text>
            </TouchableOpacity>     
   		</View>
 			)

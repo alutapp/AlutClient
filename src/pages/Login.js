@@ -22,10 +22,10 @@ export default class Login extends Component<{}> {
 		return(
 			<View style={styles.container}>
 				<Logo/>
-				<Form type="Login"/>
+				<Form clickName="Login"/>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
-					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}>Signup</Text></TouchableOpacity>
 				</View>
 			</View>	
 			)
