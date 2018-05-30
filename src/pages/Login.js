@@ -12,17 +12,20 @@ import Form from '../components/Form';
 
 import {Actions} from 'react-native-router-flux';
 
-export default class Login extends Component<{}> {
+export default class Login extends Component {
 
 	signup() {
 		Actions.signup()
+	}
+	createprofile() {
+		Actions.createprofile()
 	}
 
 	render() {
 		return(
 			<View style={styles.container}>
 				<Logo/>
-				<Form type="Login"/>
+				<Form type="Login" link={this.createprofile}/>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
 					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>

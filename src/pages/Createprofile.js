@@ -11,7 +11,7 @@ import Logo from '../components/Logo';
 import Form from '../components/Form';
 
 import {Actions} from 'react-native-router-flux';
-
+import PageControl from 'react-native-page-control';
 export default class Signup extends Component {
 
   goBack() {
@@ -21,12 +21,19 @@ export default class Signup extends Component {
 	render() {
 		return(
 			<View style={styles.container}>
-				<Logo/>
-				<Form type="Signup"/>
-				<View style={styles.signupTextCont}>
-					<Text style={styles.signupText}>Already have an account?</Text>
-					<TouchableOpacity onPress={this.goBack}><Text style={styles.signupButton}> Sign in</Text></TouchableOpacity>
-				</View>
+      
+      <PageControl
+      style={styles.pagecontrol}
+      numberOfPages={3}
+      currentPage={1}
+      hidesForSinglePage
+      pageIndicatorTintColor='gray'
+      currentPageIndicatorTintColor='white'
+      indicatorStyle={{borderRadius: 5}}
+      currentIndicatorStyle={{borderRadius: 5}}
+      indicatorSize={{width:8, height:8}}
+      onPageIndicatorPress={this.onItemTap}
+/>
 			</View>	
 			)
 	}
@@ -39,20 +46,10 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent :'center'
   },
-  signupTextCont : {
-  	flexGrow: 1,
-    alignItems:'flex-end',
-    justifyContent :'center',
-    paddingVertical:16,
-    flexDirection:'row'
-  },
-  signupText: {
-  	color:'rgba(255,255,255,0.6)',
-  	fontSize:16
-  },
-  signupButton: {
-  	color:'#ffffff',
-  	fontSize:16,
-  	fontWeight:'500'
+  pagecontrol : {
+    position:'absolute',
+     left:0,
+     right:0,
+     bottom:10
   }
 });
