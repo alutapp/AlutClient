@@ -7,14 +7,18 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default class FirstProfileForm extends Component {
+import * as strings from '../resources/strings'
+
+export default class FirstStageProfile extends Component {
 
 	render(){
 		return(
 			<View style={styles.container}>
+      <Text>{strings.fillYourDetails}</Text>
+      <Text>{strings.hiddenFields}</Text>
           <TextInput style={styles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="תעודת זהות"
+              placeholder= {strings.inputId}
               placeholderTextColor = "#ffffff"
               selectionColor="#fff"
               keyboardType="email-address"
@@ -22,13 +26,13 @@ export default class FirstProfileForm extends Component {
               />
           <TextInput style={styles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="מס׳ טלפון"
+              placeholder= {strings.inputPhone}
               placeholderTextColor = "#ffffff"
 
               />
 
            <TouchableOpacity style={styles.button} onPress={this.props.link}>
-             <Text style={styles.buttonText}>הבא</Text>
+             <Text style={styles.buttonText}>{strings.nextPage}</Text>
            </TouchableOpacity>
   		</View>
 			)

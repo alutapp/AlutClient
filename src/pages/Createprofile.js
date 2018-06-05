@@ -7,9 +7,10 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import * as strings from '../resources/strings'
 import Logo from '../components/Logo';
 import Form from '../components/Form';
-import FirstProfileForm from '../components/FirstProfileForm';
+import FirstStageProfile from '../components/FirstStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
 import {Actions} from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
@@ -22,7 +23,7 @@ export default class Signup extends Component {
 	render() {
 		return(
 			<View style = {styles.container}>
-      <ProfileHeader headerName="יצירת פרופיל"/>
+      <ProfileHeader headerName={strings.headerTitle}/>
 
       <PageControl style={styles.pageControl}
       numberOfPages={3}
@@ -36,7 +37,7 @@ export default class Signup extends Component {
       onPageIndicatorPress={this.onItemTap}
       />
 
-      <FirstProfileForm/>
+      <FirstStageProfile/>
 			</View>
 			)
 	}
