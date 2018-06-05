@@ -8,7 +8,9 @@ export const nextPage = "הבא";
 
 
 //FirstProfileForm.js
-export const headerTitle = "יצירת פרופיל";
 export const fillYourDetails = "אנא מלאו את הפרטים שלכם";
-export const hiddenFields = "פרט חסוי הוא לשימוש פנימי בלבד";
+export const hiddenFields = "פרט חסוי הוא לשימוש פנימי בלבד!";
 export const hidden = "חסוי";
+
+//CreateProfile.js
+export const headerTitle = "יצירת פרופיל";

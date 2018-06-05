@@ -14,6 +14,7 @@ import FirstStageProfile from '../components/FirstStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
 import {Actions} from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
+
 export default class Signup extends Component {
 
   goBack() {
@@ -27,7 +28,7 @@ export default class Signup extends Component {
 
       <PageControl style={styles.pageControl}
       numberOfPages={3}
-      currentPage={1}
+      currentPage={0}
       hidesForSinglePage
       pageIndicatorTintColor='gray'
       currentPageIndicatorTintColor='white'

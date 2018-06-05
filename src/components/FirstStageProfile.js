@@ -9,13 +9,15 @@ import {
 
 import * as strings from '../resources/strings'
 
+import globalStyles from '../resources/styles'
+
 export default class FirstStageProfile extends Component {
 
 	render(){
 		return(
-			<View style={styles.container}>
-      <Text>{strings.fillYourDetails}</Text>
-      <Text>{strings.hiddenFields}</Text>
+			<View style={globalStyles.container}>
+      <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
+      <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
           <TextInput style={styles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder= {strings.inputId}
@@ -40,11 +42,10 @@ export default class FirstStageProfile extends Component {
 }
 
 const styles = StyleSheet.create({
-  container : {
-    flexGrow: 1,
-    justifyContent:'center',
-    alignItems: 'center',
-
+  h1Title:{
+    fontSize:18,
+    color:'white',
+    fontWeight:'bold'
   },
 
   inputBox: {
