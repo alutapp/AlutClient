@@ -1,6 +1,17 @@
 
 // This file includes all the app hebrew strings.
 
+//Form.js
+export const inputEmail = "כתובת אימייל";
+export const inputPassword = "סיסמה";
+export const loginButton = "התחבר";
+
+//Login.js
+export const signUp = "הרשמה";
+export const signUpText = "אין לך חשבון עדיין ? ";
+export const welcomeText = "ברוכים הבאים לאפליקציית אלו״ט";
+export const forgotPassword = " אין לך חשבון ? ";
+
 //FirstProfileForm.js
 export const inputId = "תעודת זהות";
 export const inputPhone = "מס' טלפון";

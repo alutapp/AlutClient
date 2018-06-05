@@ -4,33 +4,35 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity 
+  TouchableOpacity
 } from 'react-native';
+
+import * as strings from '../resources/strings'
 
 export default class Form extends Component {
 
 	render(){
 		return(
 			<View style={styles.container}>
-          <TextInput style={styles.inputBox} 
-              underlineColorAndroid='rgba(0,0,0,0)' 
-              placeholder="Email"
+          <TextInput style={styles.inputBox}
+              underlineColorAndroid='rgba(0,0,0,0)'
+              placeholder= {strings.inputEmail}
               placeholderTextColor = "#ffffff"
               selectionColor="#fff"
               keyboardType="email-address"
               onSubmitEditing={()=> this.password.focus()}
               />
-          <TextInput style={styles.inputBox} 
-              underlineColorAndroid='rgba(0,0,0,0)' 
-              placeholder="Password"
+          <TextInput style={styles.inputBox}
+              underlineColorAndroid='rgba(0,0,0,0)'
+              placeholder={strings.inputPassword}
               secureTextEntry={true}
               placeholderTextColor = "#ffffff"
               ref={(input) => this.password = input}
-              />  
+              />
 
            <TouchableOpacity style={styles.button} onPress={this.props.link}>
-             <Text style={styles.buttonText}>{this.props.type}</Text>
-           </TouchableOpacity>     
+             <Text style={styles.buttonText}>{strings.loginButton}</Text>
+           </TouchableOpacity>
   		</View>
 			)
 	}
@@ -65,5 +67,5 @@ const styles = StyleSheet.create({
     color:'#ffffff',
     textAlign:'center'
   }
-  
+
 });
