@@ -22,7 +22,7 @@ export default class Login extends Component {
   password() {
     Actions.password()
 	}
-	
+
   createProfile() {
     Actions.createprofile()
   }

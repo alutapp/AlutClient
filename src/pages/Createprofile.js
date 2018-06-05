@@ -9,6 +9,7 @@ import {
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
+import FirstProfileForm from '../components/FirstProfileForm';
 import ProfileHeader from '../components/ProfileHeader';
 import {Actions} from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
@@ -20,10 +21,10 @@ export default class Signup extends Component {
 
 	render() {
 		return(
-			<View style={styles.container}>
-      <ProfileHeader/>
-      <PageControl
-      style={styles.pagecontrol}
+			<View style = {styles.container}>
+      <ProfileHeader headerName="יצירת פרופיל"/>
+
+      <PageControl style={styles.pageControl}
       numberOfPages={3}
       currentPage={1}
       hidesForSinglePage
@@ -34,7 +35,9 @@ export default class Signup extends Component {
       indicatorSize={{width:8, height:8}}
       onPageIndicatorPress={this.onItemTap}
       />
-			</View>	
+
+      <FirstProfileForm/>
+			</View>
 			)
 	}
 }
@@ -43,13 +46,9 @@ const styles = StyleSheet.create({
   container : {
     backgroundColor:'#455a64',
     flex: 1,
-    alignItems:'center',
-    justifyContent :'center'
+    flexDirection: 'column'
   },
-  pagecontrol : {
-    position:'absolute',
-     left:0,
-     right:0,
-     bottom:10
+  pageControl : {
+    paddingVertical:20
   }
 });

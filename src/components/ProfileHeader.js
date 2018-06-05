@@ -6,7 +6,7 @@ import {
     Image,
     Props
 } from 'react-native';
-import {Header} from 'react-native-elements';
+import {Header,Icon} from 'react-native-elements';
 
 export default class MyHeader extends Component {
 
@@ -14,9 +14,13 @@ export default class MyHeader extends Component {
         super(props);
         this.headerName = props.headerName;
     }
-    render(){
-        <Header 
-            centerComponent={{text: this.headerName, style: {fontWeight:'bold', size:'12'}}}
-            rightComponent = {{icon:'ios-arrow-forward'}}/>
-    }
+
+   render(){
+		 return(
+        <Header
+						outerContainerStyles={{ backgroundColor: '#455a64' }}
+            centerComponent={{text: this.headerName, style: {fontWeight:'bold', fontSize:20}}}
+            rightComponent = {<Icon name='chevron-right' />}
+						/>
+    )};
 }
