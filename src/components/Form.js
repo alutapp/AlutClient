@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+//import 'react-widgets/dist/css/react-widgets.css';
+
+// ...Or if you prefer to use the Less or Sass files directly
+// import 'react-widgets/lib/less/react-widgets.less';
+// import 'react-widgets/lib/scss/react-widgets.scss';
+
+//import { render } from 'react-dom';
+//import DropdownList from 'react-widgets';
+import ModalDropDown from 'react-native-modal-dropdown';
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  TouchableOpacity 
+  TouchableOpacity
 } from 'react-native';
+
 
 export default class Logo extends Component<{}> {
 
@@ -14,23 +24,27 @@ export default class Logo extends Component<{}> {
 			<View style={styles.container}>
           <TextInput style={styles.inputBox} 
               underlineColorAndroid='rgba(0,0,0,0)' 
-              placeholder="Email"
+              placeholder="שם הילד"
               placeholderTextColor = "#ffffff"
               selectionColor="#fff"
-              keyboardType="email-address"
-              onSubmitEditing={()=> this.password.focus()}
+              //keyboardType="child-name"
+              //onSubmitEditing={()=> this.password.focus()}
               />
-          <TextInput style={styles.inputBox} 
-              underlineColorAndroid='rgba(0,0,0,0)' 
-              placeholder="Password"
-              secureTextEntry={true}
-              placeholderTextColor = "#ffffff"
-              ref={(input) => this.password = input}
-              />  
+              
            <TouchableOpacity style={styles.button}>
-             <Text style={styles.buttonText}>{this.props.type}</Text>
-           </TouchableOpacity>     
+             <Text style={styles.buttonText}>הבא</Text>
+           </TouchableOpacity>    
+           
+
+          <ModalDropDown dropdownStyle={styles.ModalDropDown} options ={['option1', 'option2']}>
+        
+          </ModalDropDown>
+
+
+
   		</View>
+      
+      
 			)
 	}
 }
@@ -40,6 +54,15 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent:'center',
     alignItems: 'center'
+  },
+
+  dropDown:{
+    width: 300,
+    backgroundColor:'rgba(255, 255,255,0.2)',
+    borderRadius: 25,
+    paddingHorizontal:16,
+    color:'#ffffff',
+    marginVertical: 10
   },
 
   inputBox: {
@@ -66,3 +89,4 @@ const styles = StyleSheet.create({
   }
   
 });
+
