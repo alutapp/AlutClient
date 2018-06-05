@@ -21,13 +21,17 @@ export default class Login extends Component {
 
   password() {
     Actions.password()
+	}
+
+  createProfile() {
+    Actions.createprofile()
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Logo text="Welcome to Alut app"/>
-        <Form type="Login" />
+        <Form type="Login" link={this.createProfile}/>
         <TouchableOpacity onPress={this.password}>
           <Text style={styles.signupText}>Forgot password?</Text>
         </TouchableOpacity>
