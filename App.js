@@ -6,50 +6,32 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
-  Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 
-import MyHeader from './components/MyHeader.js'
-import BadgeTabIcon from './components/BadgeTabIcon.js'
-import Test from './Test';
-import {Icon} from 'react-native-elements'
-import { createBottomTabNavigator } from 'react-navigation';
 
+import Routes from './src/Routes';
 
-type Props = {};
-export class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
-      <View>
-    <MyHeader />
-}
-      />
-        <Text style={styles.welcome}>
-          ברוכים הבאים לאפליקציית אלו״ט
-        </Text>
-
+      <View style={styles.container}>
+        <StatusBar
+           backgroundColor="#1c313a"
+           barStyle="light-content"
+         />
+        <Routes/>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  container : {
+    flex: 1,
+  }
 });
 
 export default createBottomTabNavigator({
