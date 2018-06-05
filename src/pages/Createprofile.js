@@ -9,7 +9,7 @@ import {
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
-
+import ProfileHeader from '../components/ProfileHeader';
 import {Actions} from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
 export default class Signup extends Component {
@@ -21,7 +21,7 @@ export default class Signup extends Component {
 	render() {
 		return(
 			<View style={styles.container}>
-      
+      <ProfileHeader/>
       <PageControl
       style={styles.pagecontrol}
       numberOfPages={3}
@@ -33,7 +33,7 @@ export default class Signup extends Component {
       currentIndicatorStyle={{borderRadius: 5}}
       indicatorSize={{width:8, height:8}}
       onPageIndicatorPress={this.onItemTap}
-/>
+      />
 			</View>	
 			)
 	}
