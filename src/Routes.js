@@ -13,6 +13,7 @@ export default class Routes extends Component {
 			      <Scene key="login" component={Login} title="Login" initial={true}/>
 			      <Scene key="signup" component={Signup} title="Register"/>
 			      <Scene key="createprofile" component={Createprofile} title="Createprofile"/>
+				  <Scene key="password" component={Password} title="Password"/>
 			    </Stack>
 			 </Router>
 			)
