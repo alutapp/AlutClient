@@ -20,7 +20,7 @@ export default class MyHeader extends Component {
         <Header
 						outerContainerStyles={{ backgroundColor: '#455a64' }}
             centerComponent={{text: this.headerName, style: {fontWeight:'bold', fontSize:20}}}
-            rightComponent = {<Icon name='chevron-right' />}
+            leftComponent = {<Icon name='navigate-next' />}
 						/>
     )};
 }
