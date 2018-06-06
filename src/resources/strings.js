@@ -23,5 +23,12 @@ export const fillYourDetails = "אנא מלאו את הפרטים שלכם";
 export const hiddenFields = "פרט חסוי הוא לשימוש פנימי בלבד!";
 export const hidden = "חסוי";
 
+
+//SecondStageProfile.js
+export const fillKidDetails = "אנא מלאו את פרטי הילד";
+export const bestProfit = "כך נוכל למצוא בשבילכם את ההתאמה המושלמת!";
+export const kidName = "שם הילד"
+
 //CreateProfile.js
 export const headerTitle = "יצירת פרופיל";
+export const goToApp = "עבור לאפליקציה"

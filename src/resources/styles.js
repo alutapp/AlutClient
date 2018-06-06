@@ -6,8 +6,7 @@ export const globalStyles = StyleSheet.create({
   container : {
     backgroundColor:'#455a64',
     flex: 1,
-    flexDirection: 'column',
-    alignItems:'center'
+    flexDirection: 'column'
   },
 
   h1Title:{

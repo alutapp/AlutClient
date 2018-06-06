@@ -7,15 +7,15 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import * as strings from '../resources/strings'
+import * as strings from '../../resources/strings'
 
-import globalStyles from '../resources/styles'
+import globalStyles from '../../resources/styles'
 
-export default class FirstStageProfile extends Component {
+export default class FourthStageProfile extends Component {
 
 	render(){
 		return(
-			<View style={globalStyles.container}>
+			<View style={styles.container}>
       <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
       <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
           <TextInput style={styles.inputBox}
@@ -33,19 +33,15 @@ export default class FirstStageProfile extends Component {
 
               />
 
-           <TouchableOpacity style={styles.button} onPress={this.props.link}>
-             <Text style={styles.buttonText}>{strings.nextPage}</Text>
-           </TouchableOpacity>
+
   		</View>
 			)
 	}
 }
 
 const styles = StyleSheet.create({
-  h1Title:{
-    fontSize:18,
-    color:'white',
-    fontWeight:'bold'
+  container:{
+    alignItems:'center'
   },
 
   inputBox: {
