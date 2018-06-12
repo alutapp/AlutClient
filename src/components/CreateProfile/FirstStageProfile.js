@@ -7,42 +7,41 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import * as strings from '../resources/strings'
+import * as strings from '../../resources/strings'
 
-export default class Form extends Component {
+import globalStyles from '../../resources/styles'
+
+export default class FirstStageProfile extends Component {
 
 	render(){
 		return(
 			<View style={styles.container}>
+      <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
+      <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
           <TextInput style={styles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputEmail}
+              placeholder= {strings.inputId}
               placeholderTextColor = "#ffffff"
               selectionColor="#fff"
               keyboardType="email-address"
-              onSubmitEditing={()=> this.password.focus()}
+              // onSubmitEditing={()=> }
               />
           <TextInput style={styles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder={strings.inputPassword}
-              secureTextEntry={true}
+              placeholder= {strings.inputPhone}
               placeholderTextColor = "#ffffff"
-              ref={(input) => this.password = input}
+
               />
 
-           <TouchableOpacity style={styles.button} onPress={this.props.link}>
-             <Text style={styles.buttonText}>{strings.loginButton}</Text>
-           </TouchableOpacity>
+
   		</View>
 			)
 	}
 }
 
 const styles = StyleSheet.create({
-  container : {
-    flexGrow: 1,
-    justifyContent:'center',
-    alignItems: 'center'
+  container:{
+    alignItems:'center'
   },
 
   inputBox: {

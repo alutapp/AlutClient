@@ -10,6 +10,7 @@ import {
 
 import Logo from '../components/Logo';
 import Form from '../components/Form';
+import * as strings from '../resources/strings'
 
 import { Actions } from 'react-native-router-flux';
 
@@ -30,14 +31,14 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Logo text="Welcome to Alut app"/>
+        <Logo text={strings.welcomeText}/>
         <Form type="Login" link={this.createProfile}/>
         <TouchableOpacity onPress={this.password}>
-          <Text style={styles.signupText}>Forgot password?</Text>
+          <Text style={styles.signupText}>{strings.forgotPassword}</Text>
         </TouchableOpacity>
         <View style={styles.signupTextCont}>
-          <Text style={styles.signupText}>Don't have an account yet?</Text>
-          <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+          <Text style={styles.signupText}>{strings.signUpText}</Text>
+          <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> {strings.signUp}</Text></TouchableOpacity>
         </View>
       </View>
     )

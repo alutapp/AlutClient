@@ -7,15 +7,17 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import * as strings from '../resources/strings'
+import * as strings from '../../resources/strings'
 
-export default class FirstStageProfile extends Component {
+import globalStyles from '../../resources/styles'
+
+export default class FourthStageProfile extends Component {
 
 	render(){
 		return(
 			<View style={styles.container}>
-      <Text>{strings.fillYourDetails}</Text>
-      <Text>{strings.hiddenFields}</Text>
+      <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
+      <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
           <TextInput style={styles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder= {strings.inputId}
@@ -31,20 +33,15 @@ export default class FirstStageProfile extends Component {
 
               />
 
-           <TouchableOpacity style={styles.button} onPress={this.props.link}>
-             <Text style={styles.buttonText}>{strings.nextPage}</Text>
-           </TouchableOpacity>
+
   		</View>
 			)
 	}
 }
 
 const styles = StyleSheet.create({
-  container : {
-    flexGrow: 1,
-    justifyContent:'center',
-    alignItems: 'center',
-
+  container:{
+    alignItems:'center'
   },
 
   inputBox: {

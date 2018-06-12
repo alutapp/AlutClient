@@ -7,27 +7,49 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import * as strings from '../resources/strings'
+import * as strings from '../resources/strings';
+import globalStyles from '../resources/styles'
 import Logo from '../components/Logo';
 import Form from '../components/Form';
-import FirstStageProfile from '../components/FirstStageProfile';
+import FirstStageProfile from '../components/CreateProfile/FirstStageProfile';
+import SecondStageProfile from '../components/CreateProfile/SecondStageProfile';
+import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';
+import FinishStageProfile from '../components/CreateProfile/FinishStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
 import {Actions} from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
+
 export default class Signup extends Component {
+
+  constructor(props){
+    super(props);
+    this.currentPage = 0;
+    this.state = {currentPage : 0 , numOfPages: 3};
+    this.pagesComponents = [<FirstStageProfile/>, <SecondStageProfile/>,<ThirdStageProfile/>,<FinishStageProfile/>];
+  }
+
 
   goBack() {
       Actions.pop();
   }
 
-	render() {
-		return(
-			<View style = {styles.container}>
-      <ProfileHeader headerName={strings.headerTitle}/>
+  onPress = () => {
+    if(this.state.currentPage < this.state.numOfPages){
+      this.setState({
+        currentPage: this.state.currentPage+1
+      })
+    }
+  }
 
+	render() {
+    console.log("Maor");
+		return(
+			<View style = {globalStyles.container}>
+      <ProfileHeader headerName={strings.headerTitle}/>
+      <View style = {styles.container}>
       <PageControl style={styles.pageControl}
       numberOfPages={3}
-      currentPage={1}
+      currentPage={this.state.currentPage}
       hidesForSinglePage
       pageIndicatorTintColor='gray'
       currentPageIndicatorTintColor='white'
@@ -37,7 +59,14 @@ export default class Signup extends Component {
       onPageIndicatorPress={this.onItemTap}
       />
 
-      <FirstStageProfile/>
+      {this.pagesComponents[this.state.currentPage]}
+
+
+      <TouchableOpacity style={styles.button} onPress={this.onPress}>
+        <Text style={styles.buttonText}>{this.state.currentPage != this.state.numOfPages ? strings.nextPage : strings.goToApp}</Text>
+      </TouchableOpacity>
+
+      </View>
 			</View>
 			)
 	}
@@ -45,11 +74,25 @@ export default class Signup extends Component {
 
 const styles = StyleSheet.create({
   container : {
-    backgroundColor:'#455a64',
-    flex: 1,
-    flexDirection: 'column'
+    alignItems:'center'
   },
   pageControl : {
     paddingVertical:20
+  },
+  button: {
+    width:300,
+    position:'absolute',
+    backgroundColor:'#1c313a',
+     borderRadius: 25,
+    top:540,
+
+  },
+  buttonText: {
+    fontSize:16,
+    fontWeight:'500',
+    color:'#ffffff',
+    textAlign:'center',
+    paddingVertical:10
+
   }
 });
