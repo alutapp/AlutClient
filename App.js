@@ -12,17 +12,15 @@ import {
 } from 'react-native';
 
 
-import Routes from './src/Routes';
+import Home from './src/Home';
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar
-           backgroundColor="#1c313a"
-           barStyle="light-content"
-         />
-        <Routes/>
+
+        <Home/>
+
       </View>
     );
   }
@@ -30,6 +28,6 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container : {
-    flex: 1,
+    flex: 1
   }
 });

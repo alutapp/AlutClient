@@ -10,7 +10,7 @@ export const loginButton = "התחבר";
 export const signUp = "הרשמה";
 export const signUpText = "אין לך חשבון עדיין ? ";
 export const welcomeText = "ברוכים הבאים לאפליקציית אלו״ט";
-export const forgotPassword = " אין לך חשבון ? ";
+export const forgotPassword = " שכחת סיסמא ? ";
 
 //FirstProfileForm.js
 export const inputId = "תעודת זהות";
@@ -32,3 +32,15 @@ export const kidName = "שם הילד"
 //CreateProfile.js
 export const headerTitle = "יצירת פרופיל";
 export const goToApp = "עבור לאפליקציה"
+
+//RegisterRequest.js
+export const gladYouJoinUs = "איזה כיף שהצטרפתם אלינו!";
+export const onlySomeDetails = "רק כמה פרטים ונוכל להמשיך";
+export const firstName = "שם פרטי";
+export const lastName = "שם משפחה";
+export const switch_yes = "כן";
+export const switch_no = "לא";
+export const alutFriend = "חבר באלו״ט?"
+export const first_comment = "כשהבקשה תאושר - נשלח הודעת אימייל עם פרטי הגישה שלך לחשבון."
+export const second_comment = "במידה והבקשה לא תאושר - נשלח הודעת אימייל הכוללת פרטי יצירת קשר מול אלו״ט."
+export const send_request = "שליחת בקשה";
