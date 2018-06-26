@@ -16,29 +16,23 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
 
-  signup() {
-    Actions.signup()
+  constructor(props){
+    super(props);
   }
 
-  password() {
-    Actions.password()
-	}
-
-  createProfile() {
-    Actions.createprofile()
-  }
 
   render() {
+   const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Logo text={strings.welcomeText}/>
-        <Form type="Login" link={this.createProfile}/>
-        <TouchableOpacity onPress={this.password}>
+        <Form type="Login" link={() => navigate('Home')}/>
+        <TouchableOpacity onPress={() => navigate('Password')}>
           <Text style={styles.signupText}>{strings.forgotPassword}</Text>
         </TouchableOpacity>
         <View style={styles.signupTextCont}>
           <Text style={styles.signupText}>{strings.signUpText}</Text>
-          <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> {strings.signUp}</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate('SignUp')}><Text style={styles.signupButton}> {strings.signUp}</Text></TouchableOpacity>
         </View>
       </View>
     )
