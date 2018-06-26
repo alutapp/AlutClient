@@ -17,6 +17,8 @@ import { SearchBar } from 'react-native-elements';
 import { Icon } from 'react-native-elements';
 import User from './User';
 import MyHeader from './MyHeader';
+import SearchFilter from './SearchFilter';
+
 export default class UsersList extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +47,7 @@ render() {
     return (
 <View style={containerStyle.container}>
 <MyHeader/>
+      <SearchFilter/>
       <FlatList
         data= {this.state.data}
         renderItem={this._renderItem}
