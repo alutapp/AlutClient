@@ -10,13 +10,18 @@ export const globalStyles = StyleSheet.create({
   },
 
   h1Title:{
-    fontSize:18,
+    fontSize:22,
     color:'white',
     fontWeight:'bold'
   },
 
   h2Title:{
-    fontSize:14,
+    fontSize:18,
+    color:'white'
+  },
+
+  h3Title:{
+    fontSize:16,
     color:'white'
   }
 

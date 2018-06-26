@@ -42,7 +42,6 @@ export default class Signup extends Component {
   }
 
 	render() {
-    console.log("Maor");
 		return(
 			<View style = {globalStyles.container}>
       <ProfileHeader headerName={strings.headerTitle}/>
