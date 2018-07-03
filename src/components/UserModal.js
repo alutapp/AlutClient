@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, TouchableOpacity, StyleSheet, View, Image } from 'react-native';
 import Modal from 'react-native-modal'; // 2.4.0
 import { Avatar, Header, Icon } from 'react-native-elements';
+import * as strings from '../resources/strings'
 
 const Images = {
   boy: require('../images/boy.png'),
@@ -30,26 +31,29 @@ export default class UserModal extends Component {
   _renderModalContent = () => (
     <View style={styles.modalContent}>
 
-        <View style={styles.rowContainer}>
+      <View style={styles.rowContainer}>
         <Icon name="star" size={30} style={this.state.star} />
         <Image style={styles.user}
           source={require('../images/user.png')} />
       </View>
-      <View style={styles.columnContainer}>
-        <View style={styles.rowContainer}>
-          <Image style={{ top: '2%', width: 50, height: 40 }}
-            source={this.props.user.isMale ? Images.boy : Images.girl} />
-          <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.age}</Text>
+      <View style={styles.rowContainer}>
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.name}</Text>
+      </View>
+      <View style={styles.rowContainer}>
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.isMale ? strings.boy : strings.girl} {this.props.user.age}</Text>
+        <Image style={{ top: '2%', width: 50, height: 40 }}
+          source={this.props.user.isMale ? Images.boy : Images.girl} />
+      </View>
+      <View style={styles.rowContainer}>
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.location}</Text>
+        <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.location} />
         </View>
         <View style={styles.rowContainer}>
-          <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.name}</Text>
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.hobbies}</Text>
 
-          <Image style={{ top: '2%', width: 50, height: 40 }}
-            source={Images.location} />
-            <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.location}</Text>
-  
-          {this._renderButton('Close', () => this.setState({ modalClose: false }))}
-        </View>
+</View>
+        <View style={styles.rowContainer}>
+        {this._renderButton('Close', () => this.setState({ modalClose: false }))}
       </View>
     </View>
   );
@@ -85,11 +89,11 @@ const styles = StyleSheet.create({
   star: {
     color: '#ffff00',
   },
-  user: { 
+  user: {
     top: '2%',
     width: 50,
     height: 40,
-    padding: 10, 
+    alignItems: 'flex-start'
   },
   button: {
     backgroundColor: 'lightblue',

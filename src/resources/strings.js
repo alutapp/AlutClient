@@ -45,3 +45,8 @@ export const alutFriend = "חבר באלו״ט?"
 export const first_comment = "כשהבקשה תאושר - נשלח הודעת אימייל עם פרטי הגישה שלך לחשבון."
 export const second_comment = "במידה והבקשה לא תאושר - נשלח הודעת אימייל הכוללת פרטי יצירת קשר מול אלו״ט."
 export const send_request = "שליחת בקשה";
+
+//UserModal.js
+export const boy = 'בן'
+export const girl ='בת'
+export const hobbies ='תחביבים:'
