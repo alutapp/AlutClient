@@ -24,7 +24,7 @@ export default class User extends Component{
 		return (
 			<View style={styles.container}>
       
-      <UserModal modalVisible={this.state.modalVisible} modalClose={true} />
+      <UserModal modalVisible={this.state.modalVisible} modalClose={true} user={this.props.user} />
 
       <TouchableOpacity onPress={this.onPress}>
         <View style={styles.columContainer}>
@@ -39,10 +39,10 @@ export default class User extends Component{
               <View style={styles.rowContainer}>
                   <Text style = {{paddingHorizontal:'15%', fontSize:16,left:'20%'}}>{this.props.user.location}</Text>
                 </View>
+  <Icon iconStyle={{opacity:0.7, position:'absolute' , bottom: 0, right: 0}} name='star' color='#ffd11a' borderRadius={0} size={40}/>
 
         </View>
 
-  <Icon iconStyle={{opacity:0.7, position:'absolute' , bottom: 0, right: 0}} name='star' color='#ffd11a' borderRadius={0} size={40}/>
 		      </TouchableOpacity>
           	</View>
 		)
