@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@ptomasroos/react-native-multi-slider": "0.0.14",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
     "react-lifecycles-compat": "^3.0.4",
@@ -21,6 +22,7 @@
     "react-native-router-flux": "^4.0.0-beta.31",
     "react-native-step-indicator": "0.0.8",
     "react-native-switch": "^1.5.0",
+    "react-native-tooltip": "^5.2.0",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.5.2"
   },
