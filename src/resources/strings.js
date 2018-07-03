@@ -8,6 +8,7 @@ export const loginButton = "התחבר";
 
 //Login.js
 export const signUp = "הרשמה";
+export const createProfile = "צור פרופיל";
 export const signUpText = "אין לך חשבון עדיין ? ";
 export const welcomeText = "ברוכים הבאים לאפליקציית אלו״ט";
 export const forgotPassword = " שכחת סיסמא ? ";

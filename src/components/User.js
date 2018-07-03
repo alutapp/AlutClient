@@ -3,18 +3,30 @@ import {
 	StyleSheet,
 	Text,
 	View,
-	Image
+	Image,
+  TouchableOpacity
 } from 'react-native';
 
+import UserModal from './UserModal';
 import {Avatar,Header,Icon} from 'react-native-elements';
 export default class User extends Component{
   constructor(props){
       super(props);
+      this.state = {modalVisible:false};
   }
+  
+  onPress = () => {
+    this.setState({modalVisible:true});
+  }
+
+
   render() {
 		return (
 			<View style={styles.container}>
+      
+      <UserModal modalVisible={this.state.modalVisible} modalClose={true} />
 
+      <TouchableOpacity onPress={this.onPress}>
         <View style={styles.columContainer}>
 
           <View style={styles.rowContainer}>
@@ -31,7 +43,8 @@ export default class User extends Component{
         </View>
 
   <Icon iconStyle={{opacity:0.7, position:'absolute' , bottom: 0, right: 0}} name='star' color='#ffd11a' borderRadius={0} size={40}/>
-			</View>
+		      </TouchableOpacity>
+          	</View>
 		)
 	}
 }
