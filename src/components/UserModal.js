@@ -3,12 +3,7 @@ import { Text, TouchableOpacity, StyleSheet, View, Image } from 'react-native';
 import Modal from 'react-native-modal'; // 2.4.0
 import { Avatar, Header, Icon } from 'react-native-elements';
 import * as strings from '../resources/strings'
-
-const Images = {
-  boy: require('../images/boy.png'),
-  girl: require('../images/girl.png'),
-  location: require('../images/location.png'),
-};
+import Images from '../resources/images'
 
 export default class UserModal extends Component {
 
