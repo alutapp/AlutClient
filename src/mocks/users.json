@@ -7,6 +7,7 @@
       "name":"דנה לוי",
       "age":"7",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre"],
       "pic_source":"File"
     },
     {
@@ -15,6 +16,7 @@
       "name":"יואב כהן",
       "age":"8",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     },
     {
@@ -23,6 +25,7 @@
       "name":"פלוני אלמוני",
       "age":"15",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     },
     {
@@ -31,6 +34,7 @@
       "name":"פלוני אלמוני",
       "age":"15",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     },
     {
@@ -39,6 +43,7 @@
       "name":"פלוני אלמוני",
       "age":"15",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     },
     {
@@ -47,6 +52,7 @@
       "name":"פלוני אלמוני",
       "age":"15",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     },
     {
@@ -55,6 +61,7 @@
       "name":"פלוני אלמוני",
       "age":"15",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     },
     {
@@ -63,6 +70,7 @@
       "name":"פלוני אלמוני",
       "age":"15",
       "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
       "pic_source":"File"
     }
 

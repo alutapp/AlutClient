@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, StyleSheet, View, Image } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, View, Image
+  ,FlatList } from 'react-native';
 import Modal from 'react-native-modal'; // 2.4.0
 import { Avatar, Header, Icon } from 'react-native-elements';
 import * as strings from '../resources/strings'
@@ -22,6 +23,11 @@ export default class UserModal extends Component {
       </View>
     </TouchableOpacity>
   );
+  _renderHobby = ({item}) => (   
+    <Image style={{ top: '2%', width: 50, height: 40 }} source={Images[item]} />
+  );
+  keyExtractor = (item, index) => index.toString()
+
 
   _renderModalContent = () => (
     <View style={styles.modalContent}>
@@ -45,6 +51,15 @@ export default class UserModal extends Component {
         </View>
         <View style={styles.rowContainer}>
         <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.hobbies}</Text>
+        </View>
+
+        <View style={styles.rowContainer}>
+      <FlatList
+        horizontal
+        data= {this.props.user.hobbies}
+        renderItem={this._renderHobby}
+        keyExtractor={this.keyExtractor}
+      />
 
 </View>
         <View style={styles.rowContainer}>
