@@ -14,6 +14,7 @@ import Form from '../components/Form';
 import FirstStageProfile from '../components/CreateProfile/FirstStageProfile';
 import SecondStageProfile from '../components/CreateProfile/SecondStageProfile';
 import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';
+import FourthStageProfile from '../components/CreateProfile/FourthStageProfile';
 import FinishStageProfile from '../components/CreateProfile/FinishStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
 import {Actions} from 'react-native-router-flux';
@@ -24,8 +25,9 @@ export default class Signup extends Component {
   constructor(props){
     super(props);
     this.currentPage = 0;
-    this.state = {currentPage : 0 , numOfPages: 3};
-    this.pagesComponents = [<FirstStageProfile/>, <SecondStageProfile/>,<ThirdStageProfile/>,<FinishStageProfile/>];
+    this.state = {currentPage : 0 , numOfPages: 4};
+    this.pagesComponents = [<FirstStageProfile/>, <SecondStageProfile/>,<ThirdStageProfile/>,
+    <FourthStageProfile/>,<FinishStageProfile/>];
   }
 
 
@@ -47,7 +49,7 @@ export default class Signup extends Component {
       <ProfileHeader headerName={strings.headerTitle}/>
       <View style = {styles.container}>
       <PageControl style={styles.pageControl}
-      numberOfPages={3}
+      numberOfPages={4}
       currentPage={this.state.currentPage}
       hidesForSinglePage
       pageIndicatorTintColor='gray'
@@ -60,11 +62,11 @@ export default class Signup extends Component {
 
       {this.pagesComponents[this.state.currentPage]}
 
-
-      <TouchableOpacity style={styles.button} onPress={this.onPress}>
+<View style={{flexDirection:'column',paddingBottom:5}}>
+      <TouchableOpacity style={globalStyles.smallButton} onPress={this.onPress}>
         <Text style={styles.buttonText}>{this.state.currentPage != this.state.numOfPages ? strings.nextPage : strings.goToApp}</Text>
       </TouchableOpacity>
-
+</View>
       </View>
 			</View>
 			)
@@ -78,20 +80,10 @@ const styles = StyleSheet.create({
   pageControl : {
     paddingVertical:20
   },
-  button: {
-    width:300,
-    position:'absolute',
-    backgroundColor:'#1c313a',
-     borderRadius: 25,
-    top:540,
-
-  },
   buttonText: {
     fontSize:16,
     fontWeight:'500',
     color:'#ffffff',
     textAlign:'center',
-    paddingVertical:10
-
   }
 });

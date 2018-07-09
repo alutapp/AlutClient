@@ -4,14 +4,16 @@
 //Form.js
 export const inputEmail = "כתובת אימייל";
 export const inputPassword = "סיסמה";
-export const loginButton = "התחבר";
+export const loginButton = "התחברות";
 
 //Login.js
 export const signUp = "הרשמה";
 export const createProfile = "צור פרופיל";
-export const signUpText = "אין לך חשבון עדיין ? ";
+export const haventJoinYet = "עוד לא הצטרפת?";
+export const signUpText = "בואו נתחיל!";
 export const welcomeText = "ברוכים הבאים לאפליקציית אלו״ט";
-export const forgotPassword = " שכחת סיסמא ? ";
+export const forgotPassword = "שכחתי סיסמא";
+export const aboutUs = "מי אנחנו?";
 
 //FirstProfileForm.js
 export const inputId = "תעודת זהות";
@@ -29,6 +31,9 @@ export const hidden = "חסוי";
 export const fillKidDetails = "אנא מלאו את פרטי הילד";
 export const bestProfit = "כך נוכל למצוא בשבילכם את ההתאמה המושלמת!";
 export const kidName = "שם הילד"
+
+//ThirdStageProfile.js
+export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"
 
 //CreateProfile.js
 export const headerTitle = "יצירת פרופיל";
@@ -57,5 +62,7 @@ export const dolls = 'בובות'
 export const gaming = 'משחקי מחשב'
 export const music = 'מוזיקה'
 export const puzzles = 'פאזלים'
-export const soccer = 'כדורגל'
+export const sport = 'ספורט'
 export const theatre = 'תיאטרון'
+
+export const allHobbies = ['cinema','cooking','dancing','dolls','gaming','music','puzzles','sport','theatre']

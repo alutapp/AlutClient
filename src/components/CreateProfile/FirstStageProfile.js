@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import * as strings from '../../resources/strings'
-
 import globalStyles from '../../resources/styles'
 
 export default class FirstStageProfile extends Component {
@@ -18,7 +17,7 @@ export default class FirstStageProfile extends Component {
 			<View style={styles.container}>
       <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
       <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
-          <TextInput style={styles.inputBox}
+          <TextInput style={globalStyles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder= {strings.inputId}
               placeholderTextColor = "#ffffff"
@@ -26,7 +25,7 @@ export default class FirstStageProfile extends Component {
               keyboardType="email-address"
               // onSubmitEditing={()=> }
               />
-          <TextInput style={styles.inputBox}
+          <TextInput style={globalStyles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder= {strings.inputPhone}
               placeholderTextColor = "#ffffff"
@@ -42,16 +41,6 @@ export default class FirstStageProfile extends Component {
 const styles = StyleSheet.create({
   container:{
     alignItems:'center'
-  },
-
-  inputBox: {
-    width:300,
-    backgroundColor:'rgba(255, 255,255,0.2)',
-    borderRadius: 25,
-    paddingHorizontal:16,
-    fontSize:16,
-    color:'#ffffff',
-    marginVertical: 10
   },
   button: {
     width:300,

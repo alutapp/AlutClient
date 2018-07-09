@@ -4,33 +4,79 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 
+import globalStyles from '../resources/styles'
 import * as strings from '../resources/strings'
-
+import Images from '../resources/images'
 export default class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
+
+  onPress = () => {
+    this.props.link();
+/* 
+    fetch('82.166.126.57:3000/signin/m@gmail.com/password', {
+      method:'POST',
+      headers: {
+        'Accept':'application/json',
+      }, body:JSON.stringify({
+        username: this.state.username,
+        password: this.state.password,
+      })
+    })
+    .then((response) => response.json())
+    .then((res) => {
+      if(res.success === true) {
+        AsyncStorage.setItem('user', res.user);
+            this.props.link();
+      } else {
+        alert(res.message);
+      }
+    })
+  .done(); */
+
+  }
 
 	render(){
 		return(
 			<View style={styles.container}>
-          <TextInput style={styles.inputBox}
+      
+        <View style={styles.rowContainer}>
+          <TextInput style={globalStyles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder= {strings.inputEmail}
               placeholderTextColor = "#ffffff"
               selectionColor="#fff"
               keyboardType="email-address"
-              onSubmitEditing={()=> this.password.focus()}
+              onChangeText = {(username) => this.setState({username})}
+              onSubmitEditing={()=> this.state.password.focus()
+              }
               />
-          <TextInput style={styles.inputBox}
+          <Image style={{ top: '2%', width: 50, height: 50 }} source={Images.loginUser} />
+        </View>
+        
+        <View style={styles.rowContainer}>
+          <TextInput style={globalStyles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder={strings.inputPassword}
-              secureTextEntry={true}
               placeholderTextColor = "#ffffff"
-              ref={(input) => this.password = input}
+              selectionColor="#fff"
+              secureTextEntry={true}
+              text-align= 'left'
+              onChangeText = {(password) =>  this.setState({password})}
               />
+          <Image style={{ top: '2%', width: 50, height: 50 }} source={Images.lock} />
+          </View>
 
-           <TouchableOpacity style={styles.button} onPress={this.props.link}>
+           <TouchableOpacity style={styles.button} onPress={this.onPress}>
              <Text style={styles.buttonText}>{strings.loginButton}</Text>
            </TouchableOpacity>
   		</View>
@@ -45,14 +91,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  inputBox: {
-    width:300,
-    backgroundColor:'rgba(255, 255,255,0.2)',
-    borderRadius: 25,
-    paddingHorizontal:16,
-    fontSize:16,
-    color:'#ffffff',
-    marginVertical: 10
+  rowContainer: {
+    flexDirection: 'row'
   },
   button: {
     width:300,

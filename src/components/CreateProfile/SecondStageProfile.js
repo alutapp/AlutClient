@@ -12,9 +12,10 @@ import {
 const ages = ['10', '11', '12','13','14','15'];
 const areas = ['צפון'];
 import * as strings from '../../resources/strings'
-import {Avatar} from 'react-native-elements'
 import globalStyles from '../../resources/styles'
+import {Avatar} from 'react-native-elements'
 import ListPopover from 'react-native-list-popover';
+import Images from '../../resources/images';
 
 export default class SecondStageProfile extends Component {
 constructor(props){
@@ -25,18 +26,19 @@ constructor(props){
 
    };
 }
+addPic() {
+  //TODO: add pic
+}
 	render(){
 		return(
-		    <View style={styles.container}>
+      <View style={styles.container}>
       <Text style = {globalStyles.h1Title}>{strings.fillKidDetails}</Text>
-      <Text style = {globalStyles.h2Title}>{strings.bestProfit}</Text>
-
+      <Text style = {[globalStyles.h2Title,{textAlign:'center'}]}>{strings.bestProfit}</Text>
       <View style = {{paddingVertical:20}}>
-      <Image style={{ width: 90, height: 90}}
-        source={require('../../images/add-user.png')} />
+      <Image style={{ width: 90, height: 90}} source={Images.addUser} onPress = {this.addPic} />
         </View>
 
-        <TextInput style={styles.inputBox}
+        <TextInput style={globalStyles.inputBox}
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder= {strings.kidName}
             placeholderTextColor = "#ffffff"
@@ -81,16 +83,9 @@ const styles = StyleSheet.create({
   container:{
     alignItems:'center'
   },
+  
 
-  inputBox: {
-    width:300,
-    backgroundColor:'rgba(255, 255,255,0.2)',
-    borderRadius: 25,
-    paddingHorizontal:16,
-    fontSize:16,
-    color:'#ffffff',
-    marginVertical: 10
-  },
+
   button: {
     width:300,
     backgroundColor:'#1c313a',
