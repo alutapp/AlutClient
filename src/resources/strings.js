@@ -31,6 +31,8 @@ export const hidden = "חסוי";
 export const fillKidDetails = "אנא מלאו את פרטי הילד";
 export const bestProfit = "כך נוכל למצוא בשבילכם את ההתאמה המושלמת!";
 export const kidName = "שם הילד"
+export const chooseAge = "בחר גיל"
+export const area = "אזור מגורים"
 
 //ThirdStageProfile.js
 export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"

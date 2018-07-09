@@ -51,7 +51,7 @@ addPic() {
             <TouchableHighlight
             style={styles.selectBox}
             onPress={() => this.setState({isVisible1: true})}>
-            <Text>{this.state.item1 || 'בחר גיל'}</Text>
+            <Text>{this.state.item1 ||strings.chooseAge}</Text>
           </TouchableHighlight>
           <ListPopover
             list={ages}
@@ -65,7 +65,7 @@ addPic() {
             <TouchableHighlight
             style={styles.selectBox}
             onPress={() => this.setState({isVisible2: true})}>
-            <Text>{this.state.item2 ||'אזור מגורים'}</Text>
+            <Text>{this.state.item2 ||strings.area}</Text>
           </TouchableHighlight>
           <ListPopover
             list={areas}
