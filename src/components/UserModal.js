@@ -24,7 +24,7 @@ export default class UserModal extends Component {
     </TouchableOpacity>
   );
   _renderHobby = ({item}) => (   
-    <Image style={{ top: '2%', width: 50, height: 40 }} source={Images[item]} />
+    <Image style={{ top: '10%', width: 50, height: 60 }} source={Images[item]} />
   );
   keyExtractor = (item, index) => index.toString()
 
