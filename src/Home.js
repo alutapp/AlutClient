@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {View,Text} from 'react-native';
-// import {Router, Stack, Scene} from 'react-native-router-flux';
 import {createStackNavigator} from 'react-navigation';
 import Password from './pages/Password'
 import Login from './pages/Login';
-import Createprofile from './pages/CreateProfile';
+import Createprofile from './pages/Createprofile';
 import RegisterRequest from './pages/RegisterRequest';
 import Main from './pages/Main';
 
@@ -24,9 +23,12 @@ export default createStackNavigator({
 		screen: Login
 	},
 	Home: {
-		screen: Main
+		screen: Main,
+		navigationOptions: {
+        gesturesEnabled: false
+      }
 	},
-	
+
 	SignUp:{
 		screen:RegisterRequest
 	},
@@ -38,5 +40,6 @@ export default createStackNavigator({
 	}
 },
 {
-headerMode: 'none'
+headerMode: 'none',
+
 });

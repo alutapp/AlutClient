@@ -17,7 +17,6 @@ import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';
 import FourthStageProfile from '../components/CreateProfile/FourthStageProfile';
 import FinishStageProfile from '../components/CreateProfile/FinishStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
-import {Actions} from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
 
 export default class Signup extends Component {

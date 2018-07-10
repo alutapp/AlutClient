@@ -17,6 +17,7 @@ import { SearchBar } from 'react-native-elements';
 import { Icon } from 'react-native-elements';
 import User from './User';
 import MyHeader from './MyHeader';
+import SearchComponent from './SearchComponent';
 export default class UsersList extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +46,7 @@ render() {
     return (
 <View style={containerStyle.container}>
 <MyHeader/>
+<SearchComponent />
       <FlatList
         data= {this.state.data}
         renderItem={this._renderItem}
@@ -60,8 +62,10 @@ render() {
   }
 
   renderHeader = () => {
-     return <SearchBar showLoading style={{position:'absolute', top:'0'}} round lightTheme placeholder="חפש..." onChangeText={this.filterSearch}/>;
-    }
+    return <View></View>
+  }
+    //  return <SearchBar showLoading style={{position:'absolute', top:'0'}} round lightTheme placeholder="חפש..." onChangeText={this.filterSearch}/>;
+    // }
 
   makeRemoteRequest = () => {
     this.setState({
