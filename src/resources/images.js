@@ -5,6 +5,7 @@ const Images = {
     v: require('../images/v.png'),
     x: require('../images/x.png'),
     addUser: require('../images/add-user.png'),
+    user: require('../images/user.png'),
     location: require('../images/location.png'),
     loginUser: require('../images/loginuser.png'),
     lock: require('../images/lock.png'),

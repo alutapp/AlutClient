@@ -33,6 +33,9 @@ export const bestProfit = "כך נוכל למצוא בשבילכם את ההתא
 export const kidName = "שם הילד"
 export const chooseAge = "בחר גיל"
 export const area = "אזור מגורים"
+export const gender = "מין:"
+export const male = "זכר"
+export const female = "נקבה"
 
 //ThirdStageProfile.js
 export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"
@@ -57,6 +60,10 @@ export const send_request = "שליחת בקשה";
 export const boy = 'בן'
 export const girl ='בת'
 export const hobbies ='תחביבים:'
+export const add ='הוספה'
+
+
+//hobbies
 export const cinema = 'קולנוע'
 export const cooking = 'בישול'
 export const dancing = 'ריקוד'

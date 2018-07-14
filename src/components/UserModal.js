@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, StyleSheet, View, Image
-  ,FlatList } from 'react-native';
+import {
+  Text, TouchableOpacity, StyleSheet, View, Image
+  , FlatList
+} from 'react-native';
 import Modal from 'react-native-modal'; // 2.4.0
-import { Avatar, Header, Icon } from 'react-native-elements';
+import { Avatar, Header } from 'react-native-elements';
 import * as strings from '../resources/strings'
 import Images from '../resources/images'
-
+import Icon from 'react-native-vector-icons/EvilIcons';
 export default class UserModal extends Component {
 
   constructor(props) {
@@ -15,15 +17,10 @@ export default class UserModal extends Component {
     };
 
   }
-
-  _renderButton = (text, onPress) => (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.button}>
-        <Text>{text}</Text>
-      </View>
-    </TouchableOpacity>
+  pressedStar = () => (
+    this.setState({ modalClose: false })
   );
-  _renderHobby = ({item}) => (   
+  _renderHobby = ({ item }) => (
     <Image style={{ top: '10%', width: 50, height: 60 }} source={Images[item]} />
   );
   keyExtractor = (item, index) => index.toString()
@@ -31,58 +28,62 @@ export default class UserModal extends Component {
 
   _renderModalContent = () => (
     <View style={styles.modalContent}>
-
-      <View style={styles.rowContainer}>
-        <Icon name="star" size={30} style={this.state.star} />
-        <Image style={styles.user}
-          source={require('../images/user.png')} />
-      </View>
-      <View style={styles.rowContainer}>
-        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.name}</Text>
-      </View>
-      <View style={styles.rowContainer}>
-        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.isMale ? strings.boy : strings.girl} {this.props.user.age}</Text>
-        <Image style={{ top: '2%', width: 50, height: 40 }}
-          source={this.props.user.isMale ? Images.boy : Images.girl} />
-      </View>
-      <View style={styles.rowContainer}>
-        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{this.props.user.location}</Text>
-        <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.location} />
+      <View style={[styles.rowContainer,{justifyContent:'flex-start'}]}>
+        <View style={[styles.columnContainer, { flex:1}]}>
+          <TouchableOpacity onPress={this.pressedStar}>
+            <Icon name={'star'} size={50} style={styles.icon} />
+          </TouchableOpacity>
+          <Text style={{ fontSize: 16, fontWeight: 'bold', alignSelf:'flex-start'}}>{strings.add}</Text>
         </View>
-        <View style={styles.rowContainer}>
-        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.hobbies}</Text>
+        <View style={[styles.columnContainer, {flex:1, alignItems: 'center' }]}>
+          <Image style={styles.user} source={Images.user} />
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{this.props.user.name}</Text>
         </View>
+        <View style={[styles.columnContainer, {flex:1, alignItems: 'center' }]}>
+        </View>
+      </View>
 
-        <View style={styles.rowContainer}>
+    <View style={[styles.columnContainer, { alignItems: 'center' }]}>
+      <View style={[styles.rowContainer]}>
+        <View style={styles.columnContainer}>
+          <Text style={{ height: 35, top: '15%', fontSize: 16, fontWeight: 'bold' }}>{this.props.user.isMale ? strings.boy : strings.girl} {this.props.user.age}</Text>
+          <Text style={{ top: '15%', fontSize: 16, fontWeight: 'bold' }}>{this.props.user.location}</Text>
+        </View>
+        <View style={styles.columnContainer}>
+          <Image style={{ width: 50, height: 40 }} source={this.props.user.isMale ? Images.boy : Images.girl} />
+          <Image style={{ left: '20%' }} source={Images.location} />
+        </View></View></View>
+    <View style={[styles.columnContainer, { alignItems: 'flex-end' }]}>
+      <Text style={{ paddingTop: 10, fontSize: 16, fontWeight: 'bold' }}>{strings.hobbies}</Text>
+    </View>
+
+    <View style={[styles.columnContainer, { alignItems: 'flex-end' }]}>
       <FlatList
         horizontal
-        data= {this.props.user.hobbies}
+        data={this.props.user.hobbies}
         renderItem={this._renderHobby}
         keyExtractor={this.keyExtractor}
       />
 
-</View>
-        <View style={styles.rowContainer}>
-        {this._renderButton('Close', () => this.setState({ modalClose: false }))}
-      </View>
+    </View>
     </View>
   );
 
-  componentWillReceiveProps = (nextProps) => (
-    this.setState({ modalClose: true })
+componentWillReceiveProps = (nextProps) => (
+  this.setState({ modalClose: true })
+);
+
+
+render() {
+  return (
+    <View style={styles.container}>
+
+      <Modal isVisible={this.props.modalVisible && this.state.modalClose}>
+        {this._renderModalContent()}
+      </Modal>
+    </View>
   );
-
-
-  render() {
-    return (
-      <View style={styles.container}>
-
-        <Modal isVisible={this.props.modalVisible && this.state.modalClose}>
-          {this._renderModalContent()}
-        </Modal>
-      </View>
-    );
-  }
+}
 }
 
 const styles = StyleSheet.create({
@@ -96,25 +97,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  star: {
-    color: '#ffff00',
-  },
   user: {
-    top: '2%',
-    width: 50,
-    height: 40,
-    alignItems: 'flex-start'
-  },
-  button: {
-    backgroundColor: 'lightblue',
-    padding: 12,
-    margin: 16,
-    borderRadius: 4,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
+    width: 90,
+    height: 90
   },
   modalContent: {
+    padding: 5,
     backgroundColor: 'white',
-    padding: 22,
     borderRadius: 4,
     borderColor: 'rgba(0, 0, 0, 0.1)',
   },

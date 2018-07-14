@@ -34,7 +34,7 @@ addPic() {
       <View style={styles.container}>
       <Text style = {globalStyles.h1Title}>{strings.fillKidDetails}</Text>
       <Text style = {[globalStyles.h2Title,{textAlign:'center'}]}>{strings.bestProfit}</Text>
-      <View style = {{paddingVertical:20}}>
+      <View style = {{paddingTop:20}}>
       <Image style={{ width: 90, height: 90}} source={Images.addUser} onPress = {this.addPic} />
         </View>
 
@@ -72,8 +72,20 @@ addPic() {
             isVisible={this.state.isVisible2}
             onClick={(item) => this.setState({item2: item})}
             onClose={() => this.setState({isVisible2: false})}/>
-
             </View>
+            
+      <View style={styles.rowContainer}>
+      <View style={[styles.columnContainer,{alignItems:'center'}]}>
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold'}}>{strings.male}</Text>
+        <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.boy} />
+        </View>
+      <View style={[styles.columnContainer,{alignItems:'center'}]}>
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold'}}>{strings.female}</Text>
+        <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.girl} />
+        </View>
+        
+        <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.gender}</Text>
+        </View>
   		</View>
 			)
 	}
@@ -83,9 +95,12 @@ const styles = StyleSheet.create({
   container:{
     alignItems:'center'
   },
-  
-
-
+  rowContainer: {
+    flexDirection: 'row'
+  },
+  columnContainer: {
+    flexDirection: 'column'
+  },
   button: {
     width:300,
     backgroundColor:'#1c313a',

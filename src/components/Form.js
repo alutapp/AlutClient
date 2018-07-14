@@ -23,12 +23,12 @@ export default class Form extends Component {
   onPress = () => {
     this.props.link();
 /* 
-    fetch('82.166.126.57:3000/signin/m@gmail.com/password', {
+    fetch('/signin/', {
       method:'POST',
       headers: {
         'Accept':'application/json',
       }, body:JSON.stringify({
-        username: this.state.username,
+        email: this.state.username,
         password: this.state.password,
       })
     })

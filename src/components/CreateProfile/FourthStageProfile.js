@@ -10,28 +10,30 @@ import {
 import * as strings from '../../resources/strings'
 
 import globalStyles from '../../resources/styles'
+import Slider from "react-native-slider";
 
 export default class FourthStageProfile extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    }
+  }
 	render(){
 		return(
 			<View style={styles.container}>
       <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
       <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
-          <TextInput style={styles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputId}
-              placeholderTextColor = "#ffffff"
-              selectionColor="#fff"
-              keyboardType="email-address"
-              // onSubmitEditing={()=> }
-              />
-          <TextInput style={styles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputPhone}
-              placeholderTextColor = "#ffffff"
 
-              />
+      <View style={styles.container2}>
+        <Slider
+          value={this.state.value}
+          onValueChange={value => this.setState({ value })}
+        />
+        <Text>
+          Value: {this.state.value}
+        </Text>
+      </View>
 
 
   		</View>
@@ -44,6 +46,13 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
 
+  container2: {
+    flex: 1,
+    marginLeft: 10,
+    marginRight: 10,
+    alignItems: "stretch",
+    justifyContent: "center"
+  },
   inputBox: {
     width:300,
     backgroundColor:'rgba(255, 255,255,0.2)',
