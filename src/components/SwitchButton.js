@@ -19,9 +19,9 @@ export default class SwitchButton extends Component{
 			disabled={false}
 			circleSize={30}
 			barHeight={30}
-			circleBorderWidth={3}
-			backgroundActive={'gray'}
-			backgroundInactive={'gray'}
+			circleBorderWidth={0}
+			backgroundActive={'rgba(255, 255,255,0.2)'}
+			backgroundInactive={'rgba(255, 255,255,0.2)'}
 			circleActiveColor={'white'}
 			circleInActiveColor={'white'}
 			changeValueImmediately={true}

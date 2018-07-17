@@ -4,13 +4,16 @@
 //Form.js
 export const inputEmail = "כתובת אימייל";
 export const inputPassword = "סיסמה";
-export const loginButton = "התחבר";
+export const loginButton = "התחברות";
 
 //Login.js
 export const signUp = "הרשמה";
-export const signUpText = "אין לך חשבון עדיין ? ";
+export const createProfile = "צור פרופיל";
+export const haventJoinYet = "עוד לא הצטרפת?";
+export const signUpText = "בואו נתחיל!";
 export const welcomeText = "ברוכים הבאים לאפליקציית אלו״ט";
-export const forgotPassword = " שכחת סיסמא ? ";
+export const forgotPassword = "שכחתי סיסמא";
+export const aboutUs = "מי אנחנו?";
 
 //FirstProfileForm.js
 export const inputId = "תעודת זהות";
@@ -28,6 +31,25 @@ export const hidden = "חסוי";
 export const fillKidDetails = "אנא מלאו את פרטי הילד";
 export const bestProfit = "כך נוכל למצוא בשבילכם את ההתאמה המושלמת!";
 export const kidName = "שם הילד"
+export const chooseAge = "בחר גיל"
+export const area = "אזור מגורים"
+export const gender = "מין:"
+export const male = "זכר"
+export const female = "נקבה"
+
+//ThirdStageProfile.js
+export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"
+
+//fourthStageProfile.js
+export const indepedent = "עצמאי"
+export const depedent = "לא עצמאי"
+export const verbal = "וורבלי"
+export const notVerbal = "לא וורבלי"
+export const tellUsMore = "ספרו לנו קצת יותר"
+export const keyWords = "מילות מפתח"
+export const onlyIfNeeded = "רק אם צריך"
+
+
 
 //CreateProfile.js
 export const headerTitle = "יצירת פרופיל";
@@ -44,3 +66,24 @@ export const alutFriend = "חבר באלו״ט?"
 export const first_comment = "כשהבקשה תאושר - נשלח הודעת אימייל עם פרטי הגישה שלך לחשבון."
 export const second_comment = "במידה והבקשה לא תאושר - נשלח הודעת אימייל הכוללת פרטי יצירת קשר מול אלו״ט."
 export const send_request = "שליחת בקשה";
+
+//UserModal.js
+export const boy = 'בן'
+export const girl ='בת'
+export const hobbies ='תחביבים:'
+export const add ='הוספה'
+
+
+//hobbies
+export const cinema = 'קולנוע'
+export const cooking = 'בישול'
+export const dancing = 'ריקוד'
+export const dolls = 'בובות'
+export const gaming = 'משחקי מחשב'
+export const music = 'מוזיקה'
+export const puzzles = 'פאזלים'
+export const sport = 'ספורט'
+export const theatre = 'תיאטרון'
+
+export const allHobbies = ['cinema','cooking','dancing','dolls','gaming','music','puzzles','sport','theatre']
+
