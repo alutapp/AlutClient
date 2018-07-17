@@ -23,25 +23,25 @@ export default class Form extends Component {
   onPress = () => {
     this.props.link();
 
-    fetch('62.90.178.241:3000/SignIn', {
-      method:'POST',
-      headers: {
-        'Accept':'application/json',
-      }, body:JSON.stringify({
-        email: this.state.username,
-        password: this.state.password,
-      })
-    })
-    .then((response) => response.json())
-    .then((res) => {
-      if(res.success === true) {
-        AsyncStorage.setItem('user', res.user);
-            this.props.link();
-      } else {
-        alert(res.message);
-      }
-    })
-  .done(); 
+  //   fetch('62.90.178.241:3000/SignIn', {
+  //     method:'POST',
+  //     headers: {
+  //       'Accept':'application/json',
+  //     }, body:JSON.stringify({
+  //       email: this.state.username,
+  //       password: this.state.password,
+  //     })
+  //   })
+  //   .then((response) => response.json())
+  //   .then((res) => {
+  //     if(res.success === true) {
+  //       AsyncStorage.setItem('user', res.user);
+  //           this.props.link();
+  //     } else {
+  //       alert(res.message);
+  //     }
+  //   })
+  // .done(); 
 
   }
 
