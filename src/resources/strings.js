@@ -40,6 +40,17 @@ export const female = "נקבה"
 //ThirdStageProfile.js
 export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"
 
+//fourthStageProfile.js
+export const indepedent = "עצמאי"
+export const depedent = "לא עצמאי"
+export const verbal = "וורבלי"
+export const notVerbal = "לא וורבלי"
+export const tellUsMore = "ספרו לנו קצת יותר"
+export const keyWords = "מילות מפתח"
+export const onlyIfNeeded = "רק אם צריך"
+
+
+
 //CreateProfile.js
 export const headerTitle = "יצירת פרופיל";
 export const goToApp = "עבור לאפליקציה"
@@ -75,3 +86,4 @@ export const sport = 'ספורט'
 export const theatre = 'תיאטרון'
 
 export const allHobbies = ['cinema','cooking','dancing','dolls','gaming','music','puzzles','sport','theatre']
+

@@ -8,6 +8,8 @@
     "android-ios": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
   "dependencies": {
+    "@ptomasroos/react-native-multi-slider": "0.0.14",
+    "prop-types": "^15.6.2",
     "react": "16.3.1",
     "react-lifecycles-compat": "^3.0.4",
     "react-native": "0.55.3",
@@ -15,12 +17,15 @@
     "react-native-elements": "^0.19.1",
     "react-native-list-popover": "^1.1.1",
     "react-native-material-ui": "^1.22.3",
-    "react-native-modal": "^6.1.0",
+    "react-native-modal": "^6.4.0",
+    "react-native-multi-slider": "^0.3.6",
     "react-native-page-control": "^1.1.1",
+    "react-native-range-slider": "0.0.7",
     "react-native-router-flux": "^4.0.0-beta.31",
     "react-native-slider": "^0.11.0",
     "react-native-step-indicator": "0.0.8",
     "react-native-switch": "^1.5.0",
+    "react-native-tooltip": "^5.2.0",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.5.2"
   },
