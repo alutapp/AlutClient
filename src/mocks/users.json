@@ -1,0 +1,78 @@
+{
+  "users":
+  [
+    {
+      "key": "1",
+      "isMale": false,
+      "name":"דנה לוי",
+      "age":"7",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre"],
+      "pic_source":"File"
+    },
+    {
+      "key": "2",
+      "isMale": true,
+      "name":"יואב כהן",
+      "age":"8",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles", "puzzles", "puzzles", "puzzles", "puzzles", "puzzles", "puzzles", "puzzles"],
+      "pic_source":"File"
+    },
+    {
+      "key": "3",
+      "isMale": true,
+      "name":"פלוני אלמוני",
+      "age":"15",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
+      "pic_source":"File"
+    },
+    {
+      "key": "4",
+      "isMale": true,
+      "name":"פלוני אלמוני",
+      "age":"15",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
+      "pic_source":"File"
+    },
+    {
+      "key": "5",
+      "isMale": true,
+      "name":"פלוני אלמוני",
+      "age":"15",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
+      "pic_source":"File"
+    },
+    {
+      "key": "6",
+      "isMale": true,
+      "name":"פלוני אלמוני",
+      "age":"15",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
+      "pic_source":"File"
+    },
+    {
+      "key": "7",
+      "isMale": false,
+      "name":"פלוני אלמוני",
+      "age":"15",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
+      "pic_source":"File"
+    },
+    {
+      "key": "8",
+      "isMale": false,
+      "name":"פלוני אלמוני",
+      "age":"15",
+      "location":"תל -אביב",
+      "hobbies":["cinema", "theatre", "puzzles"],
+      "pic_source":"File"
+    }
+
+  ]
+}
