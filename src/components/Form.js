@@ -21,21 +21,6 @@ export default class Form extends Component {
   }
 
   onPress = () => {
-<<<<<<< HEAD
-  //   fetch('http://62.90.178.241:3000/findOneUser/123456789', {
-  //     method:'GET',
-  //     headers: {
-  //       'Accept':'application/json',
-  //       'Content-Type': 'application/json',
-  //     }
-  //   })
-  //   .then((response) => response.json())
-  //   .then((res) => {
-  //       alert(JSON.stringify(res));
-           this.props.link()
-  //     }
-  //   )
-=======
     this.props.link();
 
   //   fetch('62.90.178.241:3000/SignIn', {
@@ -56,7 +41,6 @@ export default class Form extends Component {
   //       alert(res.message);
   //     }
   //   })
->>>>>>> origin/newchen
   // .done(); 
 
   }

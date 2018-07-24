@@ -14,10 +14,7 @@ import * as strings from '../resources/strings'
 
 import globalStyles from '../resources/styles'
 
-<<<<<<< HEAD
-=======
 import { Actions } from 'react-native-router-flux';
->>>>>>> origin/newchen
 
 export default class Login extends Component {
 
