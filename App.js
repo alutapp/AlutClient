@@ -19,7 +19,11 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
 
+<<<<<<< HEAD
+        <Home />
+=======
         <Home/>
+>>>>>>> origin/newchen
 
       </View>
     );
@@ -27,7 +31,11 @@ export default class App extends Component {
 }
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
+  container: {
+=======
   container : {
+>>>>>>> origin/newchen
     flex: 1
   }
 });

@@ -18,6 +18,10 @@
     "react-native-list-popover": "^1.1.1",
     "react-native-material-ui": "^1.22.3",
     "react-native-modal": "^6.4.0",
+<<<<<<< HEAD
+    "react-native-modal-dropdown": "^0.6.2",
+=======
+>>>>>>> origin/newchen
     "react-native-multi-slider": "^0.3.6",
     "react-native-page-control": "^1.1.1",
     "react-native-range-slider": "0.0.7",
