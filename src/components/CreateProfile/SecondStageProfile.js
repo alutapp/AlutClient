@@ -16,31 +16,41 @@ import { Avatar } from 'react-native-elements'
 import ListPopover from 'react-native-list-popover';
 import Images from '../../resources/images';
 import ModalDropdown from 'react-native-modal-dropdown';
+import Gender from '../Gender'
 export default class SecondStageProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isVisible1: false,
-      isVisible2: false
-
+      isVisible2: false,
+      isHighlighted: false,
+      kidName: '',
+      photo: '',
+      age: '',
+      location: '',
+      gender: strings.boy
     };
   }
   _storeData = async () => {
-    try {            
+    try {
       const id = await AsyncStorage.getItem('id');
       const phone = await AsyncStorage.getItem('phone');
       const password = await AsyncStorage.getItem('password');
       await AsyncStorage.setItem('kidName', this.state.kidName);
+      await AsyncStorage.setItem('photo', this.state.photo);
+      await AsyncStorage.setItem('age', this.state.age);
+      await AsyncStorage.setItem('location', this.state.location);
+      await AsyncStorage.setItem('gender', this.state.gender);
       this.props.link();
-    //  await AsyncStorage.setItem('phone', this.state.phone);
-    //  await AsyncStorage.setItem('password', this.state.password);
     } catch (error) {
       // Error saving data
     }
   }
-  onPress = () =>{
-    
-    this.props.link();
+
+  genderPressed = (gender) => {
+    if (this.state.gender === gender)
+
+      this.props.link();
   }
   addPic() {
     //TODO: add pic
@@ -61,24 +71,13 @@ export default class SecondStageProfile extends Component {
           selectionColor="#fff"
           onChangeText={(val) => this.setState({ kidName: val })}
         />
-<ModalDropdown options={strings.ages} defaultValue={strings.chooseAge}
-            style={[styles.selectBox, {width: 100}]} dropdownStyle={{width: 100}}  textStyle={styles.buttonText}/>
+        <ModalDropdown options={strings.ages} defaultValue={strings.chooseAge} onSelect={(val) => this.setState({ age: strings.ages[val]})}
+          style={[styles.selectBox, { width: 100 }]} dropdownStyle={{ width: 100 }} textStyle={styles.buttonText} />
 
-<ModalDropdown options={strings.areas} defaultValue={strings.area}
-            style={styles.selectBox} dropdownStyle={{flex: 1}} textStyle={styles.buttonText}/>
+        <ModalDropdown options={strings.areas} defaultValue={strings.area} onSelect={(val) => this.setState({ location: strings.areas[val] })}
+          style={styles.selectBox} dropdownStyle={{ width: 270 }} textStyle={styles.buttonText} />
 
-        <View style={styles.rowContainer}>
-          <View style={[styles.columnContainer, { alignItems: 'center' }]}>
-            <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold' }}>{strings.male}</Text>
-            <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.boy} />
-          </View>
-          <View style={[styles.columnContainer, { alignItems: 'center' }]}>
-            <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold' }}>{strings.female}</Text>
-            <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.girl} />
-          </View>
-
-          <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.gender}</Text>
-        </View>
+        <Gender onSelect={(val) => this.setState({ gender: val })} />
 
         <View style={{ flexDirection: 'column', paddingBottom: 5 }}>
           <TouchableOpacity style={globalStyles.smallButton} onPress={this._storeData}>
@@ -108,6 +107,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginVertical: 10,
     padding: 10,
+    width: 270,
+    borderRadius: 25,
   },
   buttonText: {
     fontSize: 16,

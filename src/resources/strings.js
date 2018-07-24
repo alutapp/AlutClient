@@ -34,10 +34,10 @@ export const bestProfit = "כך נוכל למצוא בשבילכם את ההתא
 export const kidName = "שם הילד"
 export const chooseAge = "בחר גיל"
 export const area = "אזור מגורים"
-export const gender = "מין:"
+export const gender = "מין"
 export const male = "זכר"
 export const female = "נקבה"
-export const ages = [...Array(19).keys()];
+export const ages = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18'];
 export const areas = ['צפון', 'דרום', 'תל אביב', 'השרון', 'יהודה ושומרון'];
 //ThirdStageProfile.js
 export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"
