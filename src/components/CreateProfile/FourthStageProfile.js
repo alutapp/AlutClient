@@ -7,21 +7,11 @@ import {
   TouchableOpacity,
   AppRegistry,
   SliderIOS,
-<<<<<<< HEAD
-  Image,
-  Alert,
-  AsyncStorage
-} from 'react-native';
-
-import MultiSlider from '@ptomasroos/react-native-multi-slider';
-import TagSelect from '../TagSelect';
-=======
   Image
 } from 'react-native';
 
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 
->>>>>>> origin/newchen
 import * as strings from '../../resources/strings'
 
 import globalStyles from '../../resources/styles'
@@ -51,36 +41,13 @@ export default class FourthStageProfile extends Component {
         snapped
       /></View>
   );
-<<<<<<< HEAD
-  _retrieveData = async () => {
-    try {
-      this.props.link()
-      // const value = await AsyncStorage.getItem('');
-      // if (value !== null) {
-      //   // We have data!!
-      //   console.log(value);
-      // }
-     } catch (error) {
-      console.log(error);
 
-       // Error retrieving data
-     }
-  }
-=======
-
->>>>>>> origin/newchen
   setdependency = (arr) => this.setState({ dependencyRange: arr });
   setVerbal = (arr) => this.setState({ verbalRange: arr });
 
   render() {
-<<<<<<< HEAD
-
-    return (
-      <View style={{ width: 280 }}>
-=======
     return (
       <View>
->>>>>>> origin/newchen
 
         <View style={styles.sliders}>
           {this.renderMultiSlider(strings.depedent, strings.indepedent, this.state.dependencyRange, this.setdependency)}
@@ -106,40 +73,15 @@ export default class FourthStageProfile extends Component {
           maxLength={200}
           multiline={true} />
 
-<<<<<<< HEAD
-        <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingVertical: 3 }}>
-          <Text style={[globalStyles.h3Title, { paddingTop: 2 }]}>{strings.onlyIfNeeded}</Text>
-          <Text style={globalStyles.h2Title}>{strings.keyWords} </Text>
-        </View>
-        <TagSelect
-          data={strings.tags}
-          ref={(tag) => {
-            this.tag = tag;
-          }}
-        // JSON.stringify(this.tag.itemsSelected))
-        />
-
-        <View style={{ flexDirection: 'column', paddingBottom: 5 }}>
-          <TouchableOpacity style={globalStyles.smallButton} onPress={this._retrieveData}>
-            <Text style={styles.buttonText}>{strings.goToApp}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-=======
         <View style={{ flexDirection: 'row', padding:5, justifyContent:'flex-end' }}>
           <Text style={[globalStyles.h3Title,{paddingTop:2}]}>{strings.onlyIfNeeded}</Text>
           <Text style={[globalStyles.h2Title]}>{strings.keyWords} </Text>
         </View></View>
->>>>>>> origin/newchen
     )
   }
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-  sliders: {
-    alignSelf: 'center',
-=======
 
   sliders: {
     margin: 20,
@@ -151,13 +93,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
->>>>>>> origin/newchen
   },
   sliderOne: {
     flexDirection: 'row',
     justifyContent: 'space-between'
-<<<<<<< HEAD
-=======
   },
   rowContainer: {
     flex: 1,
@@ -194,7 +133,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#ffffff',
     textAlign: 'center'
->>>>>>> origin/newchen
   }
 
 });

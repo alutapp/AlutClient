@@ -4,10 +4,6 @@
 //Form.js
 export const inputEmail = "כתובת אימייל";
 export const inputPassword = "סיסמה";
-<<<<<<< HEAD
-export const passwordConfirmation = "אישור סיסמה";
-=======
->>>>>>> origin/newchen
 export const loginButton = "התחברות";
 
 //Login.js
@@ -37,18 +33,10 @@ export const bestProfit = "כך נוכל למצוא בשבילכם את ההתא
 export const kidName = "שם הילד"
 export const chooseAge = "בחר גיל"
 export const area = "אזור מגורים"
-<<<<<<< HEAD
-export const gender = "מין"
-export const male = "זכר"
-export const female = "נקבה"
-export const ages = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18'];
-export const areas = ['צפון', 'דרום', 'תל אביב', 'השרון', 'יהודה ושומרון'];
-=======
 export const gender = "מין:"
 export const male = "זכר"
 export const female = "נקבה"
 
->>>>>>> origin/newchen
 //ThirdStageProfile.js
 export const fillHobbies = "אפשר לסמן יותר מאחד, אפילו את כולם!"
 
@@ -60,29 +48,12 @@ export const notVerbal = "לא וורבלי"
 export const tellUsMore = "ספרו לנו קצת יותר"
 export const keyWords = "מילות מפתח"
 export const onlyIfNeeded = "רק אם צריך"
-<<<<<<< HEAD
-export const tags = [
-    { id: 1, label: 'חברותי' },
-    { id: 2, label: 'פטפטן' },
-    { id: 3, label: 'רגיש לרעשים' },
-    { id: 4, label: 'חברותי' },
-    { id: 5, label: 'שקט' },
-    { id: 6, label: 'פטפטן' },
-    { id: 7, label: 'רגיש לרעשים' },
-    { id: 8, label: 'חברותי' },
-  ];
-=======
 
->>>>>>> origin/newchen
 
 
 //CreateProfile.js
 export const headerTitle = "יצירת פרופיל";
-<<<<<<< HEAD
-export const goToApp = "סיימתי"
-=======
 export const goToApp = "עבור לאפליקציה"
->>>>>>> origin/newchen
 
 //RegisterRequest.js
 export const gladYouJoinUs = "איזה כיף שהצטרפתם אלינו!";
