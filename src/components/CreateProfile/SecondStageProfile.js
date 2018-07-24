@@ -37,7 +37,7 @@ export default class SecondStageProfile extends Component {
       <View style={styles.container}>
         <Text style={globalStyles.h1Title}>{strings.fillKidDetails}</Text>
         <Text style={[globalStyles.h2Title, { textAlign: 'center' }]}>{strings.bestProfit}</Text>
-        <View>
+        <View style={{flex: 1, flexDirection: 'row'}}>
 
           <PhotoUpload
             onPhotoSelect={avatar => {
@@ -83,7 +83,7 @@ export default class SecondStageProfile extends Component {
             onClose={() => this.setState({ isVisible1: false })} />
         </View>
 
-        {/* <View>
+        <View>
           <TouchableHighlight
             style={styles.selectBox}
             onPress={() => this.setState({ isVisible2: true })}>
@@ -94,9 +94,9 @@ export default class SecondStageProfile extends Component {
             isVisible={this.state.isVisible2}
             onClick={(item) => this.setState({ item2: item })}
             onClose={() => this.setState({ isVisible2: false })} />
-        </View> */}
+        </View>
 
-        {/* <View style={styles.rowContainer}>
+        <View style={styles.rowContainer}>
           <View style={[styles.columnContainer, { alignItems: 'center' }]}>
             <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold' }}>{strings.male}</Text>
             <Image style={{ top: '2%', width: 50, height: 40 }} source={Images.boy} />
@@ -107,7 +107,7 @@ export default class SecondStageProfile extends Component {
           </View>
 
           <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.gender}</Text>
-        </View> */}
+        </View>
       </View>
     )
   }
