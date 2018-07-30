@@ -51,7 +51,7 @@ export default class SecondStageProfile extends Component {
                 paddingVertical: 30,
                 width: 90,
                 height: 90,
-                borderRadius: 75
+                borderRadius: 20
               }}
               resizeMode='cover'
               source={{
@@ -61,6 +61,8 @@ export default class SecondStageProfile extends Component {
           </PhotoUpload>
         </View>
 
+        <View flex={2}>
+        <View>
         <TextInput style={globalStyles.inputBox}
           underlineColorAndroid='rgba(0,0,0,0)'
           placeholder={strings.kidName}
@@ -70,7 +72,6 @@ export default class SecondStageProfile extends Component {
         // onSubmitEditing={()=> }
         />
 
-        <View>
           <TouchableHighlight
             style={styles.selectBox}
             onPress={() => this.setState({ isVisible1: true })}>
@@ -108,6 +109,7 @@ export default class SecondStageProfile extends Component {
 
           <Text style={{ top: '5%', fontSize: 16, fontWeight: 'bold', left: '20%' }}>{strings.gender}</Text>
         </View>
+      </View>
       </View>
     )
   }
