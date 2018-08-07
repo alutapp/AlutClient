@@ -29,9 +29,7 @@ export default class SecondStageProfile extends Component {
 
     };
   }
-  addPic() {
-    //TODO: add pic
-  }
+  
   render() {
     return (
       <View style={styles.container}>
@@ -48,7 +46,6 @@ export default class SecondStageProfile extends Component {
           >
             <Image
               style={{
-                paddingVertical: 30,
                 width: 90,
                 height: 90,
                 borderRadius: 20
@@ -88,7 +85,7 @@ export default class SecondStageProfile extends Component {
           <TouchableHighlight
             style={styles.selectBox}
             onPress={() => this.setState({ isVisible2: true })}>
-            <Text>{this.state.item2 || strings.area}</Text>
+            <Text>{this.state.item2 || 'אזור מגורים'}</Text>
           </TouchableHighlight>
           <ListPopover
             list={areas}

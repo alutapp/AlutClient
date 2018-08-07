@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar ,
+  StatusBar,
   TouchableOpacity
 } from 'react-native';
 
@@ -17,73 +17,73 @@ import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';
 import FourthStageProfile from '../components/CreateProfile/FourthStageProfile';
 import FinishStageProfile from '../components/CreateProfile/FinishStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
 
 export default class Signup extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.currentPage = 0;
-    this.state = {currentPage : 0 , numOfPages: 4};
-    this.pagesComponents = [<FirstStageProfile/>, <SecondStageProfile/>,<ThirdStageProfile/>,
-    <FourthStageProfile/>,<FinishStageProfile/>];
+    this.state = { currentPage: 0, numOfPages: 4 };
+    this.pagesComponents = [<FirstStageProfile />, <SecondStageProfile />, <ThirdStageProfile />,
+    <FourthStageProfile />, <FinishStageProfile />];
   }
 
 
   goBack() {
-      Actions.pop();
+    Actions.pop();
   }
 
   onPress = () => {
-    if(this.state.currentPage < this.state.numOfPages){
+    if (this.state.currentPage < this.state.numOfPages) {
       this.setState({
-        currentPage: this.state.currentPage+1
+        currentPage: this.state.currentPage + 1
       })
     }
   }
 
-	render() {
-		return(
-			<View style = {globalStyles.container}>
-      <ProfileHeader headerName={strings.headerTitle}/>
-      <View style = {styles.container}>
-      <PageControl style={styles.pageControl}
-      numberOfPages={4}
-      currentPage={this.state.currentPage}
-      hidesForSinglePage
-      pageIndicatorTintColor='gray'
-      currentPageIndicatorTintColor='white'
-      indicatorStyle={{borderRadius: 5}}
-      currentIndicatorStyle={{borderRadius: 5}}
-      indicatorSize={{width:8, height:8}}
-      onPageIndicatorPress={this.onItemTap}
-      />
-
-      {this.pagesComponents[this.state.currentPage]}
-
-<View style={{flexDirection:'column',paddingBottom:5}}>
-      <TouchableOpacity style={globalStyles.smallButton} onPress={this.onPress}>
-        <Text style={styles.buttonText}>{this.state.currentPage != this.state.numOfPages ? strings.nextPage : strings.goToApp}</Text>
-      </TouchableOpacity>
-</View>
+  render() {
+    return (
+      <View style={globalStyles.container}>
+        <ProfileHeader headerName={strings.headerTitle} />
+        <View style={styles.container} flex={1}>
+          <PageControl style={styles.pageControl}
+            numberOfPages={4}
+            currentPage={this.state.currentPage}
+            hidesForSinglePage
+            pageIndicatorTintColor='gray'
+            currentPageIndicatorTintColor='white'
+            indicatorStyle={{ borderRadius: 5 }}
+            currentIndicatorStyle={{ borderRadius: 5 }}
+            indicatorSize={{ width: 8, height: 8 }}
+            onPageIndicatorPress={this.onItemTap}
+          />
+          <View flex={8}>
+            {this.pagesComponents[this.state.currentPage]}
+          </View>
+          <View style={{ flexDirection: 'column', paddingBottom: 5 }} flex={1}>
+            <TouchableOpacity style={globalStyles.smallButton} onPress={this.onPress}>
+              <Text style={styles.buttonText}>{this.state.currentPage != this.state.numOfPages ? strings.nextPage : strings.goToApp}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
-			</View>
-			)
-	}
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  container : {
-    alignItems:'center'
+  container: {
+    alignItems: 'center'
   },
-  pageControl : {
-    paddingVertical:20
+  pageControl: {
+    paddingVertical: 20
   },
   buttonText: {
-    fontSize:16,
-    fontWeight:'500',
-    color:'#ffffff',
-    textAlign:'center',
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#ffffff',
+    textAlign: 'center',
   }
 });
