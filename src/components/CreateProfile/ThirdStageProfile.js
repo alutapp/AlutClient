@@ -4,8 +4,11 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Image,
+  FlatList
 } from 'react-native';
+import Images from '../../resources/images';
 
 import * as strings from '../../resources/strings'
 
@@ -13,26 +16,32 @@ import globalStyles from '../../resources/styles'
 
 export default class ThirdStageProfile extends Component {
 
+  _renderHobby = ({item}) => (   
+          <View style={styles.columnContainer}>
+      <Image style={{ top: '10%', width: 90, height: 90 }} source={Images[item]} />
+      <Text style = {globalStyles.h2Title}>{strings[item]}</Text>
+    </View>
+  );
+  
+  keyExtractor = (item, index) => index.toString()
 	render(){
 		return(
 			<View style={styles.container}>
-      <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
-      <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
-          <TextInput style={styles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputId}
-              placeholderTextColor = "#ffffff"
-              selectionColor="#fff"
-              keyboardType="email-address"
-              // onSubmitEditing={()=> }
-              />
-          <TextInput style={styles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputPhone}
-              placeholderTextColor = "#ffffff"
+      <Text style = {globalStyles.h1Title}>{strings.hobbies}</Text>
+      <Text style = {globalStyles.h2Title}>{strings.fillHobbies}</Text>
+      
+      <View style={styles.rowContainer}>
+      <FlatList
+        numColumns = {3}
+        data= {strings.allHobbies}
+        columnWrapperStyle = {{
+          justifyContent: 'space-between',
+        padding:5}}
+        renderItem={this._renderHobby}
+        keyExtractor={this.keyExtractor}
+      />
 
-              />
-
+</View>
 
   		</View>
 			)
@@ -44,14 +53,12 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
 
-  inputBox: {
-    width:300,
-    backgroundColor:'rgba(255, 255,255,0.2)',
-    borderRadius: 25,
-    paddingHorizontal:16,
-    fontSize:16,
-    color:'#ffffff',
-    marginVertical: 10
+  rowContainer: {
+    flexDirection: 'row',
+  },
+  columnContainer: {
+    flexDirection: 'column',
+    alignItems:'center'
   },
   button: {
     width:300,

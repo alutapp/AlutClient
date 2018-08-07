@@ -11,6 +11,7 @@ import {
 import SwitchButton from '../components/SwitchButton'
 import globalStyles from '../resources/styles'
 import * as strings from '../resources/strings'
+import Images from '../resources/images'
 import {Icon} from 'react-native-elements'
 
 const switchtext = <Text>on</Text>;
@@ -25,11 +26,12 @@ export default class RegisterRequest extends Component{
 	render(){
 		return(
 			<View style={globalStyles.container}>
-        <View style = {styles.container}>
-          <View style = {styles.columnContainer}>
+          <View style = {[styles.columnContainer, {padding:20}]}>
             <Text style = {globalStyles.h1Title}>{strings.gladYouJoinUs}</Text>
             <Text style = {globalStyles.h2Title}>{strings.onlySomeDetails}</Text>
           </View>
+          
+          <View style = {[styles.columnContainer, {padding:20}]}>
         <TextInput style={styles.inputBox}
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder={strings.inputEmail}
@@ -50,24 +52,27 @@ export default class RegisterRequest extends Component{
 
               placeholderTextColor = "#ffffff"
               />
-          <Text style = {globalStyles.h2Title}>{strings.alutFriend}</Text>
+              </View>
+          <Text style = {[globalStyles.h2Title, {paddingHorizontal:35}]}>{strings.alutFriend}</Text>
+          <View style = {styles.columnContainer}>
           <SwitchButton option1 = {strings.switch_no} option2 = {strings.switch_yes}/>
-          <View style = {{flexDirection:'row',paddingHorizontal:40}}>
-          <Image style={{ width: 30, height: 30 }}
-            source={require('../images/v.png')} />
-          <Text style = {[globalStyles.h3Title, {paddingBottom:25}]}>{strings.first_comment}</Text>
           </View>
-          <View style = {{flexDirection:'row',paddingHorizontal:40}}>
-          <Image style={{ width: 30, height: 30 }}
-            source={require('../images/x.png')} />
-          <Text style = {[globalStyles.h3Title,{paddingBottom:15}]}>{strings.second_comment}</Text>
+          <View style = {{flexDirection:'row',paddingHorizontal:35, paddingVertical:10}}>
+          <Text style = {[globalStyles.h3Title, {paddingBottom:15,paddingHorizontal:10}]}>
+          {strings.first_comment}</Text>
+          <Image style={{ width: 30, height: 30 }} source={Images.v} />
           </View>
+          <View style = {{flexDirection:'row',paddingHorizontal:35}}>
+          <Text style = {[globalStyles.h3Title,{paddingBottom:15,paddingHorizontal:10}]}>
+          {strings.second_comment}</Text>
+          <Image style={{ width: 30, height: 30 }} source={Images.x} />
+          </View>
+          <View style = {styles.columnContainer}>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>{strings.send_request}</Text>
           </TouchableOpacity>
-  		</View>
-
+          </View>
       </View>
 			)
 	}
@@ -97,7 +102,7 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
   button: {
-    width:300,
+    width:250,
     backgroundColor:'#1c313a',
      borderRadius: 25,
       marginVertical: 10,

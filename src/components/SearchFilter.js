@@ -40,14 +40,14 @@ export default class SearchFilter extends Component {
             }}>
                 <Text style={{ fontWeight: 'bold', marginTop: 40 }}>טווח גילאים: </Text><Text>{this.state.ageRange[0]}-{this.state.ageRange[1]} שנים</Text>
                 <MultiSlider min={1} max={18} values={this.state.ageRange} sliderLength={280} onValuesChange={this.setAge} />
-
-                <Text style={{ fontWeight: 'bold' }}>המרחק ממני: </Text>><Text>{this.state.distance[0]} ק"מ</Text>
+</View>
+                /* <Text style={{ fontWeight: 'bold' }}>המרחק ממני: </Text>><Text>{this.state.distance[0]} ק"מ</Text>
 
                 <MultiSlider min={0} max={50} values={this.state.distance} onValuesChange={this.setDistance} />
                 <TouchableOpacity style={styles.button} onPress={this.props.link}>
                     <Text style={styles.buttonText}>חיפוש</Text>
                 </TouchableOpacity>
-            </View>
+            </View> */
         );
     }
 }

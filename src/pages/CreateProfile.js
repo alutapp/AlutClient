@@ -14,6 +14,7 @@ import Form from '../components/Form';
 import FirstStageProfile from '../components/CreateProfile/FirstStageProfile';
 import SecondStageProfile from '../components/CreateProfile/SecondStageProfile';
 import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';
+import FourthStageProfile from '../components/CreateProfile/FourthStageProfile';
 import FinishStageProfile from '../components/CreateProfile/FinishStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
 import { Actions } from 'react-native-router-flux';
@@ -78,14 +79,6 @@ const styles = StyleSheet.create({
   },
   pageControl: {
     paddingVertical: 20
-  },
-  button: {
-    width:300,
-    position:'absolute',
-    backgroundColor:'#1c313a',
-     borderRadius: 25,
-    top:540,
-
   },
   buttonText: {
     fontSize: 16,
