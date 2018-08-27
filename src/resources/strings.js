@@ -90,12 +90,12 @@ export const add ='הוספה'
 export const cinema = 'קולנוע'
 export const cooking = 'בישול'
 export const dancing = 'ריקוד'
-export const dolls = 'בובות'
+export const dices = 'משחקי קופסא'
 export const gaming = 'משחקי מחשב'
 export const music = 'מוזיקה'
-export const puzzles = 'פאזלים'
+export const jigsaw = 'פאזלים'
 export const sport = 'ספורט'
 export const theatre = 'תיאטרון'
 
-export const allHobbies = ['cinema','cooking','dancing','dolls','gaming','music','puzzles','sport','theatre']
+export const allHobbies = ['cinema','cooking','dancing','dices','gaming','music','jigsaw','sport','theatre']
 

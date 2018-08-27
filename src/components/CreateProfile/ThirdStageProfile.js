@@ -25,11 +25,12 @@ export default class ThirdStageProfile extends Component {
   }
   toggleHobby = (item) => {
     if (this.state.pressed.includes(item)) {
-      this.state.pressed.pop(item)
+      var hobbies = [...this.state.pressed]
+      hobbies.splice(hobbies.indexOf(item) , 1)
+      this.setState({ pressed:hobbies });
     } else {
-      this.state.pressed.push(item)
+      this.setState({ pressed: [...this.state.pressed, item] })
     }
-    this.forceUpdate(); // re-render
   }
   _renderHobby = ({ item }) => {
     return (
@@ -41,7 +42,7 @@ export default class ThirdStageProfile extends Component {
       </View>)
   }
     ;
-
+  
   updateProfile = () => {
     this.props.addProfile("hobbies", this.state.pressed);
     this.props.link();
@@ -50,11 +51,13 @@ export default class ThirdStageProfile extends Component {
   keyExtractor = (item, index) => index.toString()
 
   render() {
+    
     return (
       <View style={styles.container}>
-        <Text style={globalStyles.h1Title}>{strings.hobbies}</Text>
-        <Text style={globalStyles.h2Title}>{strings.fillHobbies}</Text>
-
+        <View style={styles.container}>
+          <Text style={globalStyles.h1Title}>{strings.hobbies}</Text>
+          <Text style={globalStyles.h2Title}>{strings.fillHobbies}</Text>
+        </View>
         <View style={styles.rowContainer}>
           <FlatList
             numColumns={3}
@@ -62,8 +65,10 @@ export default class ThirdStageProfile extends Component {
             columnWrapperStyle={styles.wrapper}
             renderItem={this._renderHobby}
             keyExtractor={this.keyExtractor}
+            extraData={this.state}
           />
         </View>
+
         <Button onPress={this.updateProfile} text={strings.nextPage} />
       </View>
     )
@@ -72,15 +77,17 @@ export default class ThirdStageProfile extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 5
   },
 
   rowContainer: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   columnContainer: {
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: 80
   },
   text: {
     top: '2%',
@@ -90,34 +97,26 @@ const styles = StyleSheet.create({
   },
   textPress: {
     top: '2%',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#ffffff'
   },
-  button: {
-    width: 300,
-    backgroundColor: '#1c313a',
-    borderRadius: 25,
-    marginVertical: 10,
-    paddingVertical: 13
-  },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: '500'
-  },
   hobbyPressed: {
     top: '10%',
-    width: 100,
-    height: 100
+    width: 64,
+    height: 64,
+    margin: 5
   },
   hobby: {
+    opacity: 0.5,
     top: '10%',
-    width: 90,
-    height: 90
+    width: 64,
+    height: 64,
+    margin: 5
   },
-  wrapper:{
+  wrapper: {
     justifyContent: 'space-between',
-    padding: 5
+    padding:10
   }
 });
