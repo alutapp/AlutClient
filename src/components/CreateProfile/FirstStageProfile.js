@@ -4,56 +4,55 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
 } from 'react-native';
 
 import * as strings from '../../resources/strings'
 import globalStyles from '../../resources/styles'
+import Button from '../Button'
 
 export default class FirstStageProfile extends Component {
-
-	render(){
-		return(
-			<View style={styles.container}>
-      <Text style = {globalStyles.h1Title}>{strings.fillYourDetails}</Text>
-      <Text style = {globalStyles.h2Title}>{strings.hiddenFields}</Text>
-          <TextInput style={globalStyles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputId}
-              placeholderTextColor = "#ffffff"
-              selectionColor="#fff"
-              keyboardType="email-address"
-              // onSubmitEditing={()=> }
-              />
-          <TextInput style={globalStyles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputPhone}
-              placeholderTextColor = "#ffffff"
-
-              />
-
-
-  		</View>
-			)
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      phone: "",
+      password: "",
+    }
+  }
+  updateProfile = () => {
+    this.props.addProfile("id", this.state.id);
+    this.props.addProfile("phone", this.state.phone);
+    this.props.addProfile("password", this.state.password);
+    this.props.link();
+  }
+  render() {
+    return (
+      <View>
+        <View style={styles.container}>
+          <Text style={globalStyles.h1Title}>{strings.fillYourDetails}</Text>
+          <Text style={globalStyles.h2Title}>{strings.hiddenFields}</Text>
+        </View>
+        <Text style={globalStyles.formTitle}>{strings.inputId}</Text>
+        <TextInput style={globalStyles.inputBox}
+          onChangeText={(val) => this.setState({ id: val })} />
+        <Text style={globalStyles.formTitle}>{strings.inputPhone}</Text>
+        <TextInput style={globalStyles.inputBox}
+          onChangeText={(val) => this.setState({ phone: val })} />
+        <Text style={globalStyles.formTitle}>{strings.inputPassword}</Text>
+        <TextInput style={globalStyles.inputBox} secureTextEntry={true}
+          onChangeText={(val) => this.setState({ password: val })} />
+        <Text style={globalStyles.formTitle}>{strings.passwordConfirmation}</Text>
+        <TextInput style={globalStyles.inputBox} secureTextEntry={true}
+          onChangeText={(val) => this.setState({ passwordConfirmation: val })} />
+        <Button onPress={this.updateProfile} text={strings.nextPage} />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  container:{
-    alignItems:'center'
-  },
-  button: {
-    width:300,
-    backgroundColor:'#1c313a',
-     borderRadius: 25,
-      marginVertical: 10,
-      paddingVertical: 13
-  },
-  buttonText: {
-    fontSize:16,
-    fontWeight:'500',
-    color:'#ffffff',
-    textAlign:'center'
+  container: {
+    alignItems: 'center',
+    padding: 5
   }
-
 });

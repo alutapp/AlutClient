@@ -15,35 +15,63 @@ import FirstStageProfile from '../components/CreateProfile/FirstStageProfile';
 import SecondStageProfile from '../components/CreateProfile/SecondStageProfile';
 import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';
 import FourthStageProfile from '../components/CreateProfile/FourthStageProfile';
-import FinishStageProfile from '../components/CreateProfile/FinishStageProfile';
 import ProfileHeader from '../components/ProfileHeader';
-import { Actions } from 'react-native-router-flux';
 import PageControl from 'react-native-page-control';
 
 export default class Signup extends Component {
 
   constructor(props) {
     super(props);
+    this.pagesComponents = [<FirstStageProfile nav={navigate} link={() => this.onPress()} addProfile={this.addProfile} />,
+    <SecondStageProfile nav={navigate} link={() => this.onPress()} addProfile={this.addProfile} />,
+    <ThirdStageProfile nav={navigate} link={() => this.onPress()} addProfile={this.addProfile}/>,
+    <FourthStageProfile nav={navigate} link={() => this.onPress(navigate)} addProfile={this.addProfile}/>];
     this.currentPage = 0;
-    this.state = { currentPage: 0, numOfPages: 4 };
-    this.pagesComponents = [<FirstStageProfile />, <SecondStageProfile />, <ThirdStageProfile />,
-    <FourthStageProfile />, <FinishStageProfile />];
+    this.state = { currentPage: 0,currentPageDisplayed:null, numOfPages: 3, profile:{} };
+    this.state.currentPageDisplayed = this.pagesComponents[0];
+    const { navigate } = this.props.navigation;
   }
-
-
-  goBack() {
-    Actions.pop();
+  addProfile = (key, value)=>{
+    this.state.profile[key] = value;
   }
-
-  onPress = () => {
+  onPress = (navigate) => {
     if (this.state.currentPage < this.state.numOfPages) {
+      console.log(this.state)
       this.setState({
+        currentPageDisplayed: this.pagesComponents[this.state.currentPage + 1],
         currentPage: this.state.currentPage + 1
       })
-    }
-  }
+    } else {
+      this.props.navigation.navigate('Login');
+      console.log(JSON.stringify(this.state.profile))
+       /*fetch('http://62.90.178.241:3000/users/createUser', {
+         method: 'POST',
+         headers: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json',
+         }, body: JSON.stringify({
+           id: "123456789",
+           firstName: "chen",
+           email: "chl@gmail.com",
+           lastName: "sword",
+           password: "username",
+           gender: "female",
+           phone: "callme",
+           childId: "0000000000",
+         })
+       })
+         .then((response) => response.json())
+         .then((res) => {
+           alert(JSON.stringify(res));
+         }
+         )
+         .done();
+        */
+       }
 
+  }
   render() {
+
     return (
       <View style={globalStyles.container}>
         <ProfileHeader headerName={strings.headerTitle} />
@@ -60,13 +88,8 @@ export default class Signup extends Component {
             onPageIndicatorPress={this.onItemTap}
           />
           <View flex={8}>
-            {this.pagesComponents[this.state.currentPage]}
-          </View>
-          <View style={{ flexDirection: 'column', paddingBottom: 5 }} flex={1}>
-            <TouchableOpacity style={globalStyles.smallButton} onPress={this.onPress}>
-              <Text style={styles.buttonText}>{this.state.currentPage != this.state.numOfPages ? strings.nextPage : strings.goToApp}</Text>
-            </TouchableOpacity>
-          </View>
+          {this.state.currentPageDisplayed}
+        </View>
         </View>
       </View>
     )
@@ -80,10 +103,4 @@ const styles = StyleSheet.create({
   pageControl: {
     paddingVertical: 20
   },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#ffffff',
-    textAlign: 'center',
-  }
 });
