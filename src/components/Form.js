@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
-
+import Button from '../components/Button'
 import globalStyles from '../resources/styles'
 import * as strings from '../resources/strings'
 import Images from '../resources/images'
@@ -21,91 +21,108 @@ export default class Form extends Component {
   }
 
   onPress = () => {
-    this.props.link();
-
-  //   fetch('62.90.178.241:3000/SignIn', {
-  //     method:'POST',
-  //     headers: {
-  //       'Accept':'application/json',
-  //     }, body:JSON.stringify({
-  //       email: this.state.username,
-  //       password: this.state.password,
-  //     })
-  //   })
-  //   .then((response) => response.json())
-  //   .then((res) => {
-  //     if(res.success === true) {
-  //       AsyncStorage.setItem('user', res.user);
-  //           this.props.link();
-  //     } else {
-  //       alert(res.message);
-  //     }
-  //   })
-  // .done(); 
+    //   fetch('http://62.90.178.241:3000/findOneUser/123456789', {
+    //     method:'GET',
+    //     headers: {
+    //       'Accept':'application/json',
+    //       'Content-Type': 'application/json',
+    //     }
+    //   })
+    //   .then((response) => response.json())
+    //   .then((res) => {
+    //       alert(JSON.stringify(res));
+    this.props.link()
+    //     }
+    //   )
+    // .done(); 
+    //   fetch('62.90.178.241:3000/SignIn', {
+    //     method:'POST',
+    //     headers: {
+    //       'Accept':'application/json',
+    //     }, body:JSON.stringify({
+    //       email: this.state.username,
+    //       password: this.state.password,
+    //     })
+    //   })
+    //   .then((response) => response.json())
+    //   .then((res) => {
+    //     if(res.success === true) {
+    //       AsyncStorage.setItem('user', res.user);
+    //           this.props.link();
+    //     } else {
+    //       alert(res.message);
+    //     }
+    //   })
+    // .done(); 
 
   }
 
-	render(){
-		return(
-			<View style={styles.container}>
-      
+  render() {
+    return (
+      <View style={styles.container}>
+
         <View style={styles.rowContainer}>
-          <TextInput style={globalStyles.inputBox}
+          <View style={styles.textView}>
+            <TextInput style={globalStyles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder= {strings.inputEmail}
-              placeholderTextColor = "#ffffff"
+              placeholder={strings.inputEmail}
+              placeholderTextColor="#ffffff"
               selectionColor="#fff"
               keyboardType="email-address"
-              onChangeText = {(username) => this.setState({username})}
-              onSubmitEditing={()=> this.state.password.focus()
+              onChangeText={(username) => this.setState({ username })}
+              onSubmitEditing={() => this.state.password.focus()
               }
-              />
-          <Image style={{ top: '2%', width: 50, height: 50 }} source={Images.loginUser} />
+            />
+          </View>
+          <View style={styles.imageView}>
+            <Image style={styles.image} resizeMode='contain' source={Images.mail} />
+          </View>
         </View>
-        
+
         <View style={styles.rowContainer}>
-          <TextInput style={globalStyles.inputBox}
+          <View style={styles.textView}>
+            <TextInput style={globalStyles.inputBox}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder={strings.inputPassword}
-              placeholderTextColor = "#ffffff"
+              placeholderTextColor="#ffffff"
               selectionColor="#fff"
               secureTextEntry={true}
-              text-align= 'left'
-              onChangeText = {(password) =>  this.setState({password})}
-              />
-          <Image style={{ top: '2%', width: 50, height: 50 }} source={Images.lock} />
+              text-align='left'
+              onChangeText={(password) => this.setState({ password })}
+            />
           </View>
 
-           <TouchableOpacity style={styles.button} onPress={this.onPress}>
-             <Text style={styles.buttonText}>{strings.loginButton}</Text>
-           </TouchableOpacity>
-  		</View>
-			)
-	}
+          <View style={styles.imageView}>
+            <Image style={styles.image} resizeMode='contain' source={Images.lock} />
+          </View>
+        </View>
+        <Button onPress={this.onPress} text={strings.loginButton} />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     flexGrow: 1,
-    justifyContent:'center',
+    justifyContent: 'center',
     alignItems: 'center'
   },
-
+  textView: {
+    flex: 6,
+    alignItems: 'center',
+    paddingHorizontal: 10
+  },
+  imageView: {
+    flex: 1,
+    alignItems: 'center'
+  },
+  image: {
+    flex: 1,
+    width: '80%'
+  },
   rowContainer: {
-    flexDirection: 'row'
-  },
-  button: {
-    width:300,
-    backgroundColor:'#1c313a',
-     borderRadius: 25,
-      marginVertical: 10,
-      paddingVertical: 13
-  },
-  buttonText: {
-    fontSize:16,
-    fontWeight:'500',
-    color:'#ffffff',
-    textAlign:'center'
+    flexDirection: 'row',
   }
 
 });

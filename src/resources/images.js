@@ -8,6 +8,7 @@ const Images = {
     user: require('../images/user.png'),
     location: require('../images/location.png'),
     loginUser: require('../images/loginuser.png'),
+    mail: require('../images/mail.png'),
     lock: require('../images/lock.png'),
     cinema: require('../images/hobbies/cinema.png'),
     cooking: require('../images/hobbies/cooking.png'),

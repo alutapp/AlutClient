@@ -8,13 +8,13 @@ import {
   TouchableHighlight
 } from 'react-native';
 
+import Button from '../components/Button'
 import Logo from '../components/Logo';
 import Form from '../components/Form';
 import * as strings from '../resources/strings'
 
 import globalStyles from '../resources/styles'
 
-import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
 
@@ -41,9 +41,7 @@ export default class Login extends Component {
           </View>
         
         <View style={styles.centerView}>
-        <TouchableOpacity style={globalStyles.smallButton} onPress={() => navigate('SignUp')}>
-          <Text style={styles.text}>{strings.signUpText}</Text>
-        </TouchableOpacity>
+        <Button onPress={() => navigate('SignUp')} text={strings.signUpText} />
         </View>
 
         <View style={styles.leftView}>
