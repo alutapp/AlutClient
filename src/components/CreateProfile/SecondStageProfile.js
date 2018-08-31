@@ -11,9 +11,13 @@ import {
 } from 'react-native';
 import PhotoUploader from '../PhotoUploader'
 import Button from '../Button'
+import t from 'tcomb-form-native'; // 0.6.9
 
 import * as strings from '../../resources/strings'
-import globalStyles from '../../resources/styles'
+import * as globalStyles from '../../resources/styles'
+import * as common from '../../resources/common'
+import * as tests from '../../resources/tests'
+import Form from '../Form'
 import { Avatar } from 'react-native-elements'
 import ListPopover from 'react-native-list-popover';
 import Images from '../../resources/images';
@@ -23,7 +27,7 @@ export default class SecondStageProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      kidName: '',
+      form:{},
       photo: '',
       age: strings.ages[0],
       location: strings.areas[0],
@@ -32,15 +36,37 @@ export default class SecondStageProfile extends Component {
   }
 
   updateProfile = () => {
-    this.props.addProfile("kidName", this.state.kidName);
+    console.log(this.state)
+    const value = this._form.getValue();
+    if (value) {
+    this.props.addProfile("kidName", this.state.form.kidName);
     this.props.addProfile("photo", this.state.photo);
     this.props.addProfile("age", this.state.age);
     this.props.addProfile("location", this.state.location);
     this.props.addProfile("gender", this.state.gender);
     this.props.link();
+    }
   }
 
+  setForm(c){
+    this._form = c
+  }
+  onChange(form) {
+    this.setState({ form });
+  }
   render() {
+    this.Person = t.struct({
+      kidName: tests.kidName
+    });
+    this.fields = {
+      kidName: {
+        placeholder: strings.kidName,
+        error: strings.kidNameError,
+        placeholderTextColor: common.TEXT_COLOR,
+        underlineColorAndroid: common.TEXT_COLOR
+      }
+    }
+
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -53,11 +79,9 @@ export default class SecondStageProfile extends Component {
           </View>
           <View>
 
-            <Text style={globalStyles.formTitle}>{strings.kidName}</Text>
-            <View style={styles.container}>
-              <TextInput style={globalStyles.inputBox}
-                onChangeText={(val) => this.setState({ kidName: val })} />
-            </View>
+          <Form type= {this.Person} fields = {this.fields} setForm={(c)=>this.setForm(c) }
+          onChange = {(val) => this.setState({ kidName: val })}/>
+
             <View style={styles.rightContainer}>
               <Text style={globalStyles.formTitle}>{strings.age}</Text>
               <ModalDropdown options={strings.ages} defaultValue={strings.ages[0]} onSelect={(val) => this.setState({ age: strings.ages[val] })}
@@ -98,7 +122,7 @@ const styles = StyleSheet.create({
   },
   dropdownText: {
     fontSize: 16,
-    color: '#ffffff',
+    color: common.TEXT_COLOR,
     textAlign: 'center'
   }
 

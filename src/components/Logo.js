@@ -5,6 +5,7 @@ import {
 	View,
 	Image
 } from 'react-native';
+import * as common from '../resources/common'
 
 export default class Logo extends Component{
 	render() {
@@ -27,6 +28,6 @@ const styles = StyleSheet.create({
 	logoText: {
 		marginVertical: 15,
 		fontSize: 18,
-		color: 'rgba(255, 255, 255, 0.7)'
+		color: common.TEXT_COLOR
 	}
 });

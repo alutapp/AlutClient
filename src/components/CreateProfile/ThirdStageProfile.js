@@ -13,7 +13,9 @@ import Button from '../Button'
 
 import * as strings from '../../resources/strings'
 
-import globalStyles from '../../resources/styles'
+import * as globalStyles  from '../../resources/styles'
+
+import * as common from '../../resources/common'
 
 export default class ThirdStageProfile extends Component {
 
@@ -93,14 +95,14 @@ const styles = StyleSheet.create({
     top: '2%',
     fontSize: 16,
     textAlign: 'center',
-    color: '#ffffff'
+    color: common.TEXT_COLOR
   },
   textPress: {
     top: '2%',
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#ffffff'
+    color: common.TEXT_COLOR
   },
   hobbyPressed: {
     top: '10%',

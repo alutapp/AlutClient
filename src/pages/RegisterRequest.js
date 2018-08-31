@@ -10,7 +10,8 @@ import {
 
 import Button from '../components/Button'
 import SwitchButton from '../components/SwitchButton'
-import globalStyles from '../resources/styles'
+import * as globalStyles  from '../resources/styles'
+import * as  common from '../resources/common'
 import * as strings from '../resources/strings'
 import Images from '../resources/images'
 
@@ -38,7 +39,7 @@ export default class RegisterRequest extends Component {
           <TextInput style={globalStyles.inputBox}
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder={strings.inputEmail}
-            placeholderTextColor="#ffffff"
+            placeholderTextColor={common.TEXT_COLOR}
             selectionColor="#fff"
             keyboardType="email-address"
 
@@ -47,12 +48,12 @@ export default class RegisterRequest extends Component {
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder={strings.firstName}
 
-            placeholderTextColor="#ffffff"
+            placeholderTextColor={common.TEXT_COLOR}
           />
           <TextInput style={globalStyles.inputBox}
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder={strings.lastName}
-            placeholderTextColor="#ffffff"
+            placeholderTextColor={common.TEXT_COLOR}
           />
         </View>
         <Text style={[globalStyles.h2Title, { paddingHorizontal: 35 }]}>{strings.alutFriend}</Text>

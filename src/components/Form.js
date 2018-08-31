@@ -1,128 +1,83 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TextInput,
-  TouchableOpacity,
-  Image
+  ScrollView
 } from 'react-native';
-import Button from '../components/Button'
-import globalStyles from '../resources/styles'
+
 import * as strings from '../resources/strings'
-import Images from '../resources/images'
-export default class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: ''
+import * as globalStyles from '../resources/styles'
+import * as tests from '../resources/tests'
+import * as common from '../resources/common'
+import t from 'tcomb-form-native'; // 0.6.9
+
+const Form = t.form.Form;
+
+const formStyles = {
+  ...Form.stylesheet,
+  textbox: {
+    normal: {
+      borderWidth: 0,
+      marginBottom: 0,
+      marginBottom: 5,
+      textAlign: "right",
+      color: common.TEXT_COLOR
+    },
+    error: {
+      borderWidth: 0,
+      marginBottom: 0,
+      marginBottom: 5,
+      textAlign: "right",
+      color: common.TEXT_COLOR
     }
-  }
-
-  onPress = () => {
-    //   fetch('http://62.90.178.241:3000/findOneUser/123456789', {
-    //     method:'GET',
-    //     headers: {
-    //       'Accept':'application/json',
-    //       'Content-Type': 'application/json',
-    //     }
-    //   })
-    //   .then((response) => response.json())
-    //   .then((res) => {
-    //       alert(JSON.stringify(res));
-    this.props.link()
-    //     }
-    //   )
-    // .done(); 
-    //   fetch('62.90.178.241:3000/SignIn', {
-    //     method:'POST',
-    //     headers: {
-    //       'Accept':'application/json',
-    //     }, body:JSON.stringify({
-    //       email: this.state.username,
-    //       password: this.state.password,
-    //     })
-    //   })
-    //   .then((response) => response.json())
-    //   .then((res) => {
-    //     if(res.success === true) {
-    //       AsyncStorage.setItem('user', res.user);
-    //           this.props.link();
-    //     } else {
-    //       alert(res.message);
-    //     }
-    //   })
-    // .done(); 
-
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-
-        <View style={styles.rowContainer}>
-          <View style={styles.textView}>
-            <TextInput style={globalStyles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder={strings.inputEmail}
-              placeholderTextColor="#ffffff"
-              selectionColor="#fff"
-              keyboardType="email-address"
-              onChangeText={(username) => this.setState({ username })}
-              onSubmitEditing={() => this.state.password.focus()
-              }
-            />
-          </View>
-          <View style={styles.imageView}>
-            <Image style={styles.image} resizeMode='contain' source={Images.mail} />
-          </View>
-        </View>
-
-        <View style={styles.rowContainer}>
-          <View style={styles.textView}>
-            <TextInput style={globalStyles.inputBox}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder={strings.inputPassword}
-              placeholderTextColor="#ffffff"
-              selectionColor="#fff"
-              secureTextEntry={true}
-              text-align='left'
-              onChangeText={(password) => this.setState({ password })}
-            />
-          </View>
-
-          <View style={styles.imageView}>
-            <Image style={styles.image} resizeMode='contain' source={Images.lock} />
-          </View>
-        </View>
-        <Button onPress={this.onPress} text={strings.loginButton} />
-      </View>
-    )
+  },
+  textboxView: {
+    normal: {
+      borderWidth: 0,
+      borderRadius: 0,
+      borderColor: common.BORDER_COLOR
+    },
+    error: {
+      borderWidth: 0,
+      borderRadius: 0,
+      borderColor: common.BORDER_COLOR
+    }
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  textView: {
-    flex: 6,
-    alignItems: 'center',
-    paddingHorizontal: 10
-  },
-  imageView: {
-    flex: 1,
-    alignItems: 'center'
-  },
-  image: {
-    flex: 1,
-    width: '80%'
-  },
-  rowContainer: {
-    flexDirection: 'row',
+export default class FirstStageProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: {}
+    };
   }
 
-});
+  onChange(type) {
+    this.setState({ type });
+    this.props.onChange(type)
+  }
+  render() {
+    const Form = t.form.Form;
+
+    this.options = {
+      auto: 'placeholders',
+      fields: this.props.fields,
+      stylesheet: formStyles,
+    };
+    return (
+      <View>
+        <Form
+          ref={c => this.props.setForm(c)}
+          type={this.props.type}
+          value={this.state.type}
+          onChange={(v) => this.onChange(v)}
+          options={this.options}
+        />
+      </View>
+    );
+  }
+}
+
+

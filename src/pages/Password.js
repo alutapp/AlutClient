@@ -9,8 +9,9 @@ import {
 } from 'react-native';
 
 import Logo from '../components/Logo';
-import Form from '../components/Form';
+import * as globalStyles  from '../resources/styles'
 
+import * as common from '../resources/common'
 import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
@@ -35,7 +36,7 @@ export default class Login extends Component {
                 <TextInput style={styles.inputBox}
                     underlineColorAndroid='rgba(0,0,0,0)'
                     placeholder="Email"
-                    placeholderTextColor="#ffffff"
+                    placeholderTextColor={common.TEXT_COLOR}
                     selectionColor="#fff"
                     keyboardType="email-address"
                     onSubmitEditing={() => this.password.focus()}
@@ -54,7 +55,7 @@ export default class Login extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#455a64',
+        backgroundColor: globalStyles.BACKGROUND_COLOR,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20
     },
     signupButton: {
-        color: '#ffffff',
+        color: common.TEXT_COLOR,
         fontSize: 16,
         fontWeight: '500'
     },
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
-        color: '#ffffff',
+        color: common.TEXT_COLOR,
         marginVertical: 10
     },
     button: {
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
       buttonText: {
         fontSize:16,
         fontWeight:'500',
-        color:'#ffffff',
+        color:common.TEXT_COLOR,
         textAlign:'center'
       }
 });

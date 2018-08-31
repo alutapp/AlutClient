@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Header, Icon } from 'react-native-elements';
+import * as globalStyles from '../resources/styles'
 
 export default class MyHeader extends Component {
 
@@ -20,8 +21,8 @@ export default class MyHeader extends Component {
     render() {
         return (
             <Header
-                outerContainerStyles={{ backgroundColor: '#455a64' }}
-                centerComponent={{ text: this.headerName, style: { fontWeight: 'bold', fontSize: 20 } }}
+                outerContainerStyles={globalStyles.app}
+                centerComponent={{ text: this.headerName, style: [globalStyles.headerFont] }}
                 leftComponent={
                     <TouchableOpacity>
                         <Icon name='navigate-next' />
@@ -29,4 +30,5 @@ export default class MyHeader extends Component {
             />
         )
     };
+
 }
