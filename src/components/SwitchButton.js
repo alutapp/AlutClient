@@ -5,7 +5,7 @@ import {
     TextInput,
 	View
 } from 'react-native';
-
+import * as common from '../resources/common'
 import { Switch } from 'react-native-switch';
 
 export default class SwitchButton extends Component{
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         margin: 5,
         fontSize:16,
         fontWeight:'500',
-        color:'#ffffff',
+        color:common.TEXT_COLOR,
         textAlign:'center'
       }
 });

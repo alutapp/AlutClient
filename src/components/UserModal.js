@@ -6,6 +6,7 @@ import {
 import Modal from 'react-native-modal'; // 2.4.0
 import { Avatar, Header } from 'react-native-elements';
 import * as strings from '../resources/strings'
+import * as common from '../resources/common'
 import Images from '../resources/images'
 import Icon from 'react-native-vector-icons/EvilIcons';
 export default class UserModal extends Component {
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     padding: 5,
-    backgroundColor: 'white',
+    backgroundColor: common.MODAL_COLOR,
     borderRadius: 4,
     borderColor: 'rgba(0, 0, 0, 0.1)',
   },

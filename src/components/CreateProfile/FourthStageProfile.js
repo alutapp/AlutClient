@@ -16,7 +16,8 @@ import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import TagSelect from '../TagSelect';
 import * as strings from '../../resources/strings'
 
-import globalStyles from '../../resources/styles'
+import * as globalStyles  from '../../resources/styles'
+import * as common  from '../../resources/common'
 
 export default class FourthStageProfile extends Component {
   constructor(props) {
@@ -67,7 +68,7 @@ export default class FourthStageProfile extends Component {
             <TextInput style={[globalStyles.inputBox,styles.inputBox]}
               underlineColorAndroid='rgba(0,0,0,0)'
               placeholder={strings.tellUsMore}
-              placeholderTextColor="#ffffff"
+              placeholderTextColor={common.TEXT_COLOR}
               selectionColor="#fff"
               editable={true}
               maxLength={200}

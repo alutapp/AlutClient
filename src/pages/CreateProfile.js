@@ -8,9 +8,8 @@ import {
 } from 'react-native';
 
 import * as strings from '../resources/strings';
-import globalStyles from '../resources/styles'
+import * as globalStyles  from '../resources/styles'
 import Logo from '../components/Logo';
-import Form from '../components/Form';
 import FirstStageProfile from '../components/CreateProfile/FirstStageProfile';
 import SecondStageProfile from '../components/CreateProfile/SecondStageProfile';
 import ThirdStageProfile from '../components/CreateProfile/ThirdStageProfile';

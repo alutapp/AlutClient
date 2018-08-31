@@ -9,7 +9,8 @@ import {
 from 'react-native'
 import * as strings from '../resources/strings';
 import Images from '../resources/images';
-import globalStyles from '../resources/styles'
+import * as globalStyles from '../resources/styles'
+import * as common from '../resources/common'
 
 export default class Gender extends Component {
     constructor() {
@@ -33,12 +34,12 @@ export default class Gender extends Component {
         return (
             <View style={styles.rowContainer}>
                 <TouchableOpacity onPress={this.toggleGender} style={styles.columnContainer}>
-                    <Text style={this.state.option2 ? styles.textPress : styles.text}>{strings.female}</Text>
-                    <Image style={this.state.option2 ? styles.buttonPress : styles.button} source={Images.girl} />
+                    <Text style={this.state.option2 ? [styles.text, styles.textPress] : styles.text}>{strings.female}</Text>
+                    <Image style={this.state.option2 ? styles.buttonPress : [styles.button,styles.buttonPress]} source={Images.girl} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.toggleGender} style={styles.columnContainer}>
-                    <Text style={this.state.option1 ? styles.textPress : styles.text}>{strings.male}</Text>
-                    <Image style={this.state.option1 ? styles.buttonPress : styles.button} source={Images.boy} />
+                    <Text style={this.state.option1 ? [styles.text, styles.textPress] : styles.text}>{strings.male}</Text>
+                    <Image style={this.state.option1 ? styles.buttonPress : [styles.button,styles.buttonPress]} source={Images.boy} />
                 </TouchableOpacity>
                 <Text style={globalStyles.formTitle}>{strings.gender}</Text>
             </View>
@@ -54,12 +55,9 @@ const styles = StyleSheet.create({
     text: {
         top: '5%',
         fontSize: 16,
-        color: 'white'
+        color: common.TEXT_COLOR
     },
     textPress: {
-        top: '5%',
-        fontSize: 18,
-        color: 'white',
         fontWeight: 'bold'
     },
     columnContainer: {
@@ -67,13 +65,11 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     button: {
-        top: '2%',
-        width: 50,
-        height: 40
+        opacity:0.5
     },
     buttonPress: {
         top: '2%',
-        width: 55,
-        height: 44
+        width: 64,
+        height: 64
     }
 })

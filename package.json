@@ -29,7 +29,8 @@
     "react-native-switch": "^1.5.0",
     "react-native-tooltip": "^5.2.0",
     "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^2.5.2"
+    "react-navigation": "^2.5.2",
+    "tcomb-form-native": "^0.6.15"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",

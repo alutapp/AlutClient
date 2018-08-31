@@ -10,10 +10,11 @@ import {
 
 import Button from '../components/Button'
 import Logo from '../components/Logo';
-import Form from '../components/Form';
+import SignIn from '../components/SignIn';
 import * as strings from '../resources/strings'
+import * as common from '../resources/common'
 
-import globalStyles from '../resources/styles'
+import * as globalStyles  from '../resources/styles'
 
 
 export default class Login extends Component {
@@ -26,9 +27,9 @@ export default class Login extends Component {
   render() {
    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={globalStyles.container}>
         <Logo text={strings.welcomeText}/>
-        <Form type="Login" link={() => navigate('Home')}/>
+        <SignIn type="Login" link={() => navigate('Home')}/>
 
         <View style={styles.leftView}>
         <TouchableOpacity onPress={() => navigate('Password')}>
@@ -56,16 +57,12 @@ export default class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#455a64',
-    flex: 1
-  },
   text: {
-    color: 'rgba(255,255,255,0.6)',
+    color: common.TEXT_COLOR,
     fontSize: 16
   },
   h1text: {
-    color: 'rgba(255,255,255,0.6)',
+    color: common.TEXT_COLOR,
     fontSize: 20
   },
   leftView: {

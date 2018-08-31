@@ -17,8 +17,13 @@ export const forgotPassword = "שכחתי סיסמא";
 export const aboutUs = "מי אנחנו?";
 
 //FirstProfileForm.js
-export const inputId = "תעודת זהות";
+export const inputId = "תעודת זהות (חסוי)";
 export const inputPhone = "מס' טלפון";
+export const passwordError = 'בחר סיסמא המכילה את ספרה, אות גדולה וקטנה באנגלית בת 8 ספרות ומעלה'
+export const phoneError = 'הכנס מספר בן 10 ספרות'
+export const idError = 'הכנס תעודת זהות בת 9 ספרות'
+export const confirmPasswordError = 'סיסמאות לא תואמות'
+
 export const nextPage = "הבא";
 
 
@@ -32,6 +37,7 @@ export const hidden = "חסוי";
 export const fillKidDetails = "אנא מלאו את פרטי הילד";
 export const bestProfit = "כך נוכל למצוא בשבילכם את ההתאמה המושלמת!";
 export const kidName = "שם הילד"
+export const kidNameError = "שם לא תקין"
 export const chooseAge = "בחר גיל"
 export const age = "גיל"
 export const area = "אזור מגורים"
