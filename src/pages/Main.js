@@ -11,6 +11,7 @@ import RegisterRequest from '../pages/RegisterRequest';
 import BadgeTabIcon from '../components/BadgeTabIcon'
 import UsersList from '../components/UsersList'
 import Test from './Test';
+import FriendsRequests from './FriendsRequests'
 import { createBottomTabNavigator } from 'react-navigation';
 
 export class Main extends Component {
@@ -30,7 +31,7 @@ export class Main extends Component {
 export default createBottomTabNavigator({
   הצעות: UsersList,
 מועדפים: Test,
-  הגדרות: Test
+  הגדרות: FriendsRequests
 },
 {
     navigationOptions: ({ navigation }) => ({
